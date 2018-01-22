@@ -17,7 +17,6 @@
 
 int		main(int ac, char **av)
 {
-	int			func_ret;
 	size_t		i;
 	t_params	*p;
 
@@ -27,19 +26,16 @@ int		main(int ac, char **av)
 		exit (1);
 	}
 	i = -1;
-	func_ret = -1;
 	while (++i < NUM_OF_FUNCS)
 	{
 		if (ft_strcmp(av[1], g_parse_funcs[i].name) == 0)
 		{
 			p = new_param(ac, av);
-			func_ret = g_parse_funcs[i].func((void*)p);
+			g_parse_funcs[i].func((void*)p);
 			break;
 		}
 	}
 	if (i == NUM_OF_FUNCS)
-		ft_printf("Invalid cypher function\n");
-	else if (func_ret == -1)
-		ft_printf("Invalid flags\n");
+		ft_printf("Unknow command: %s\n", av[1]);
 	return (0);
 }

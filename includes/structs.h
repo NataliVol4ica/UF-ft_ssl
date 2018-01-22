@@ -20,7 +20,7 @@ typedef enum	e_encoding_type
 	UNKNOWN = 0, BASE64 = 2
 }				t_encoding_type;
 
-typedef int		(*parser_func)(void*);
+typedef void	(*parser_func)(void*);
 typedef struct	s_func
 {
 	char		*name;
@@ -32,6 +32,11 @@ typedef struct	s_params
 {
 	size_t	ac;
 	char	**av;
+	char	*input;
+	char	*output;
+	int		input_fd;
+	int		output_fd;
+	_Bool	to_encrypt;
 }				t_params;
 
 #endif

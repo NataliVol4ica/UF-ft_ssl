@@ -18,3 +18,15 @@ void	malloc_error(void)
 	ft_printf("Malloc error. Exiting the program\n");
 	exit(1);
 }
+
+void	invalid_flag(char *str)
+{
+	ft_printf("Invalid flag: %s\n", str);
+	exit(1);
+}
+
+void	open_error(char *str)
+{
+	ft_printf("Error opening %s\n", str);
+	exit(1);
+}

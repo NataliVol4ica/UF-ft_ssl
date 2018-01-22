@@ -21,5 +21,10 @@ t_params	*new_param(int ac, char **av)
 		malloc_error();
 	p->ac = ac - 2;
 	p->av = &av[2];
+	p->input = NULL;
+	p->output = NULL;
+	p->input_fd = 0;
+	p->output_fd = 0;
+	p->to_encrypt = 0;
 	return (p);
 }
