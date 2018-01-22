@@ -39,4 +39,11 @@ typedef struct	s_params
 	_Bool	to_encrypt;
 }				t_params;
 
+typedef struct	s_read
+{
+	unsigned char	buf[3];
+	unsigned char	res[4];	
+}				t_read;
+
 #endif
+	

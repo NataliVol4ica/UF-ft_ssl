@@ -21,6 +21,10 @@
 
 void		base64(void *param);
 
+/*
+** STRUCT TOOLS
+*/
+
 t_params	*new_param(int ac, char **av);
 
 /*

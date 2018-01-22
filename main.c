@@ -36,6 +36,6 @@ int		main(int ac, char **av)
 		}
 	}
 	if (i == NUM_OF_FUNCS)
-		ft_printf("Unknow command: %s\n", av[1]);
+		ft_printf("Unknow crypto func: %s\n", av[1]);
 	return (0);
 }

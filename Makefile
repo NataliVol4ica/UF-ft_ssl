@@ -15,7 +15,7 @@ OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 
 LIBDIR = ./libft
 LIBFT = $(LIBDIR)/libft.a
-FLAGS = -Wall -Wextra -Werror -O3
+FLAGS = #-Wall -Wextra -Werror -O3
 LIBINCDIR = $(LIBDIR)/includes
 
 ODIR = ./obj
