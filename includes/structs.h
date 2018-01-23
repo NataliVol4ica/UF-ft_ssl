@@ -24,7 +24,6 @@ typedef void	(*t_pars_func)(void*);
 typedef struct	s_func
 {
 	char		*name;
-	size_t		len;
 	t_pars_func	func;
 }				t_func;
 
@@ -37,6 +36,7 @@ typedef struct	s_params
 	int		input_fd;
 	int		output_fd;
 	_Bool	to_encrypt;
+	char	*hex_key;
 }				t_params;
 
 typedef struct	s_read
@@ -44,6 +44,18 @@ typedef struct	s_read
 	unsigned char	x8[3];
 	unsigned char	x6[4];
 }				t_read;
+
+typedef struct	s_des
+{
+	char	str[8];
+	_Bool	block[64];
+	_Bool	x64key[64];
+}				t_des;
+
+typedef struct	s_bits
+{
+	_Bool	bits[64];
+}				t_bits;
 
 static char		*g_alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "abcdefghijklmnopqrstuvwxyz0123456789+/=";

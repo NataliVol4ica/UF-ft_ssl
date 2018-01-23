@@ -22,7 +22,7 @@ int		main(int ac, char **av)
 
 	if (ac < 2)
 	{
-		ft_printf("Invalid number of arguments\n");
+		ft_printf("usage: ft_ssl command [command opts] [command args]\n");
 		exit(1);
 	}
 	i = -1;
@@ -36,6 +36,11 @@ int		main(int ac, char **av)
 		}
 	}
 	if (i == NUM_OF_FUNCS)
-		ft_printf("Unknow crypto func: %s\n", av[1]);
+	{
+		ft_printf("ft_ssl: Error: '%s' is an invalid command.\n\n", av[1]);
+		ft_printf("Standart commands:\n\n");
+		ft_printf("Message Digest commands:\n\n");
+		ft_printf("Cipher commands:\nbase64\ndes\ndes-ecb\ndes-cbc\n");
+	}
 	return (0);
 }

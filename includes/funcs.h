@@ -15,11 +15,14 @@
 
 # include "ft_ssl.h"
 
-# define NUM_OF_FUNCS 1
+# define NUM_OF_FUNCS 2
 
 static t_func	g_parse_funcs[] =
 {
-	{"base64", 6, &base64}
+	{"base64", &base64},
+	{"des", &des_ecb},
+	{"des-ecb", &des_ecb},
+	{"des-cbc", &des_cbc}
 };
 
 #endif

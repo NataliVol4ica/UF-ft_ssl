@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_struct.c                                     :+:      :+:    :+:   */
+/*   des_ecb.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkolosov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/22 16:30:55 by nkolosov          #+#    #+#             */
-/*   Updated: 2018/01/22 16:30:56 by nkolosov         ###   ########.fr       */
+/*   Created: 2018/01/23 16:12:48 by nkolosov          #+#    #+#             */
+/*   Updated: 2018/01/23 16:12:48 by nkolosov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-t_params	*new_param(int ac, char **av)
+void	des_ecb(void *param)
 {
 	t_params	*p;
 
-	if (!(p = (t_params*)malloc(sizeof(t_params))))
-		malloc_error();
-	p->ac = ac - 2;
-	p->av = &av[2];
-	p->input = NULL;
-	p->output = NULL;
-	p->input_fd = 0;
-	p->output_fd = 0;
-	p->to_encrypt = 1;
-	p->hex_key = NULL;
-	return (p);
+	p = (t_params*)param;
+	base64_parse_flags(p);
+
+	if (!p->hex_key)
+		p->hex_key = getpass("enter des key in hex: ");
+
+	if (p->input)
+		close(p->input_fd);
+	if (p->output)
+		close(p->output_fd);
 }

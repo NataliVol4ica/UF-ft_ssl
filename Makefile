@@ -2,7 +2,8 @@ NAME = ft_ssl
 
 HEADERS =	ft_ssl \
 			structs \
-			funcs 
+			funcs \
+			permutations
 INCDIR = ./includes
 HFILES = $(patsubst %, $(INCDIR)/%.h, $(HEADERS))
 
@@ -10,7 +11,10 @@ FILENAMES =	main \
 			tools_struct \
 			errors \
 			base64 \
-			base64_converters
+			base64_converters \
+			des_ecb \
+			des_cbc \
+			parse_flags 
 CFILES = $(patsubst %, $(SRCDIR)/%.c, $(FILENAMES))
 OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 

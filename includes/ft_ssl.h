@@ -23,6 +23,13 @@ void		base64(void *param);
 void		x8_to_x6(t_params *p, t_read *reader);
 void		x6_to_x8(t_params *p, t_read *reader);
 
+void		des_ecb(void *param);
+
+void		des_cbc(void *param);
+
+void		base64_parse_flags(t_params *p);
+void		des_parse_flags(t_params *p);
+
 /*
 ** STRUCT TOOLS
 */
