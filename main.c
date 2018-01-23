@@ -23,7 +23,7 @@ int		main(int ac, char **av)
 	if (ac < 2)
 	{
 		ft_printf("Invalid number of arguments\n");
-		exit (1);
+		exit(1);
 	}
 	i = -1;
 	while (++i < NUM_OF_FUNCS)
@@ -32,7 +32,7 @@ int		main(int ac, char **av)
 		{
 			p = new_param(ac, av);
 			g_parse_funcs[i].func((void*)p);
-			break;
+			break ;
 		}
 	}
 	if (i == NUM_OF_FUNCS)

@@ -9,7 +9,8 @@ HFILES = $(patsubst %, $(INCDIR)/%.h, $(HEADERS))
 FILENAMES =	main \
 			tools_struct \
 			errors \
-			base64
+			base64 \
+			base64_converters
 CFILES = $(patsubst %, $(SRCDIR)/%.c, $(FILENAMES))
 OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 
@@ -50,6 +51,9 @@ $(ODIR)/%.o: %.c $(HFILES) $(LIBFT)
 
 $(ODIR):
 	@mkdir -p $(ODIR)
+
+$(LIBFT):
+	@make -C $(LIBDIR)
 
 clean:
 	@echo ${RED}[Removing $(NAME) *.o files]${NC}

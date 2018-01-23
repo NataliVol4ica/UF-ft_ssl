@@ -13,13 +13,15 @@
 #ifndef FT_SSL_H
 # define FT_SSL_H
 
-#include "structs.h"
+# include "structs.h"
 
 /*
 ** CRYPTOGRAPHY FUNCS
 */
 
 void		base64(void *param);
+void		x8_to_x6(t_params *p, t_read *reader);
+void		x6_to_x8(t_params *p, t_read *reader);
 
 /*
 ** STRUCT TOOLS
