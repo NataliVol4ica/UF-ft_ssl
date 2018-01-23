@@ -15,28 +15,44 @@
 #include <unistd.h>
 #include "libft.h"
 
-#define ALPH "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+#define ALPH "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
 
-static void	char_to_x64(t_params *p, t_read *reader)
+static void	x8_to_x6(t_params *p, t_read *reader)
 {
-	reader->res[0] = (reader->buf[0] >> 2);
-	reader->res[1] = reader->buf[0] << 6;
-	reader->res[1] = (reader->res[1] >> 2) + (reader->buf[1] >> 4);
-	reader->res[2] = reader->buf[1] << 4;
-	reader->res[2] = (reader->res[2] >> 2) + (reader->buf[2] >> 6);
-	reader->res[3] = reader->buf[2] << 2;
-	reader->res[3] = reader->res[3] >> 2;
-	/*ft_printf("%1$b|%2$b got into %3$b(%3$d)\n", reader.buf[1], reader.buf[2], reader.res[3]);
-	unsigned char c;
-	ft_printf("%d\n", reader.buf[2]);
-	ft_printf("%b\n", reader.buf[2]);
-	c = reader.buf[2] << 2;
-	ft_printf("%b\n", c);
-	c = c >> 2;
-	ft_printf("%b\n", c);
-	ft_printf("%d\n", c);*/
-	//ft_printf("%08b%08b%08b\n", reader.buf[0], reader.buf[1], reader.buf[2]);
-	//ft_printf("%06b%06b%06b%06b\n", reader.res[0], reader.res[1], reader.res[2], reader.res[3]);
+	reader->x6[0] = (reader->x8[0] >> 2);
+	reader->x6[1] = reader->x8[0] << 6;
+	reader->x6[1] = (reader->x6[1] >> 2) + (reader->x8[1] >> 4);
+	reader->x6[2] = reader->x8[1] << 4;
+	reader->x6[2] = (reader->x6[2] >> 2) + (reader->x8[2] >> 6);
+	reader->x6[3] = reader->x8[2] << 2;
+	reader->x6[3] = reader->x6[3] >> 2;
+}
+
+static void	x6_to_x8(t_params *p, t_read *reader)
+{
+	size_t	i;
+	size_t	j;
+
+	i = -1;
+	while (++i < 4 && (j = -1))
+		while (++j < 65)
+			if (ALPH[j] == reader->x6[i])
+			{
+				reader->x6[i] = j;
+				break ;
+			}
+	i = -1;
+	while (++i < 3)
+		reader->x8[i] = '\0';
+	reader->x8[0] = (reader->x6[0] << 2) + (reader->x6[1] >> 4);
+	if (reader->x6[2] == 64)
+		return ;
+	reader->x8[1] = reader->x6[1] << 4;
+	reader->x8[1] += (reader->x6[2] >> 2);
+	if (reader->x6[3] == 64)
+		return ;
+	reader->x8[2] = reader->x6[2] << 6;
+	reader->x8[2] += reader->x6[3];
 }
 
 void		base64(void *param)
@@ -77,23 +93,30 @@ void		base64(void *param)
 		open_error(p->output);
 
 	extra_bytes = 0;
-	while ((ret = read(p->input_fd, reader.buf, 3)) > 0 )
+	if (p->to_encrypt)
 	{
-		extra_bytes = 3 - ret;
-		ret = 3;
-		while (ret-- > 3 - extra_bytes)
-			reader.buf[ret] = 0;
-		char_to_x64(p, &reader);
-		i = -1;
-		while (++i < 4 - extra_bytes)
-			write (p->output_fd, &ALPH[reader.res[i]], 1);
-		//write(p->output_fd, &ALPH[reader.res[0]], 1);
-		//write(p->output_fd, &ALPH[reader.res[1]], 1);
-		//write(p->output_fd, &ALPH[reader.res[2]], 1);
-		//write(p->output_fd, &ALPH[reader.res[3]], 1);
+		while ((ret = read(p->input_fd, reader.x8, 3)) > 0 )
+		{
+			extra_bytes = 3 - ret;
+			ret = 3;
+			while (ret-- > 3 - extra_bytes)
+				reader.x8[ret] = 0;
+			x8_to_x6(p, &reader);
+			i = -1;
+			while (++i < 4 - extra_bytes)
+				write (p->output_fd, &ALPH[reader.x6[i]], 1);
+		}
+		while (extra_bytes-- > 0)
+			write(p->output_fd, "=", 1);
 	}
-	while (extra_bytes-- > 0)
-		write(p->output_fd, "=", 1);
+	else
+	{
+		while ((ret = read(p->input_fd, reader.x6, 4)) > 0 )
+		{
+			x6_to_x8(p, &reader);
+			write (p->output_fd, reader.x8, 3);
+		}
+	}
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)
