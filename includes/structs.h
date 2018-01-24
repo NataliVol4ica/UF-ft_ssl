@@ -45,17 +45,18 @@ typedef struct	s_read
 	unsigned char	x6[4];
 }				t_read;
 
-typedef struct	s_des
-{
-	char	str[8];
-	_Bool	block[64];
-	_Bool	x64key[64];
-}				t_des;
-
 typedef struct	s_bits
 {
 	_Bool	bits[64];
 }				t_bits;
+
+typedef struct	s_des
+{
+	t_bits	block;
+	t_bits	x64key;
+	t_bits	x56key;
+
+}				t_des;
 
 static char		*g_alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "abcdefghijklmnopqrstuvwxyz0123456789+/=";

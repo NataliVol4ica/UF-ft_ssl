@@ -30,6 +30,12 @@ void		des_cbc(void *param);
 void		base64_parse_flags(t_params *p);
 void		des_parse_flags(t_params *p);
 
+void		str_to_bits(t_des *d, char *str);
+void		key_to_bits(t_des *d, char *str);
+
+void		initial_permutation(t_des *des);
+void		key_permutation(t_des *des);
+
 /*
 ** STRUCT TOOLS
 */
@@ -43,5 +49,6 @@ t_params	*new_param(int ac, char **av);
 void		malloc_error(void);
 void		invalid_flag(char *str);
 void		open_error(char *str);
+void		key_error();
 
 #endif

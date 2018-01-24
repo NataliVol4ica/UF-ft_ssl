@@ -15,7 +15,30 @@
 #include "funcs.h"
 #include <stdlib.h>
 
-int		main(int ac, char **av)
+int		main(void)
+{
+	t_des	d;
+
+	str_to_bits(&d, "SomeText");
+	for (int i = 0; i < 64; i++)
+		ft_printf("%d", d.block.bits[i]);
+	ft_printf("\n");
+	initial_permutation(&d);
+	for (int i = 0; i < 64; i++)
+		ft_printf("%d", d.block.bits[i]);
+	ft_printf("\n\n");
+	key_to_bits(&d, "FF12CD");
+	for (int i = 0; i < 64; i++)
+		ft_printf("%d", d.x64key.bits[i]);
+	ft_printf("\n");
+	key_permutation(&d);
+	for (int i = 0; i < 56; i++)
+		ft_printf("%d", d.x56key.bits[i]);
+	ft_printf("\n");
+	return (0);
+}
+
+int		main2(int ac, char **av)
 {
 	size_t		i;
 	t_params	*p;

@@ -14,7 +14,8 @@ FILENAMES =	main \
 			base64_converters \
 			des_ecb \
 			des_cbc \
-			parse_flags 
+			parse_flags \
+			permutation
 CFILES = $(patsubst %, $(SRCDIR)/%.c, $(FILENAMES))
 OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 
