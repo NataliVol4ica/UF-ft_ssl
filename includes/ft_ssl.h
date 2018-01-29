@@ -33,6 +33,8 @@ void		des_key_shift_enc(t_des *des);
 void		des_compression_permutation(t_des *des);
 void		des_initial_permutation(t_des *des);
 void		des_final_permutation(t_des *des);
+void		des_sbox_perm(t_des *des, size_t num);
+void		des_pbox_permutation(t_des *des);
 
 /*
 ** BASE64

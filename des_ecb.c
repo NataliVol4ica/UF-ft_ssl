@@ -36,6 +36,10 @@ void	des_encode(t_des *des)
 	ft_printf("After XOR : ");
 	print_bits(des->x48data_r, 48);
 
+	for (size_t i = 0; i < 8; i++)
+		des_sbox_perm(des, i);
+	ft_printf("After sbox: ");
+	print_bits(des->x32data_r, 32);
 	des_final_permutation(des);
 }
 

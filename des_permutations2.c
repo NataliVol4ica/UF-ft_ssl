@@ -12,6 +12,7 @@
 
 #include "ft_ssl.h"
 #include "permutations.h"
+#include "libft.h"
 
 void	des_key_shift_enc(t_des *des)
 {
@@ -63,4 +64,23 @@ void	des_xor(t_bits *a, t_bits *b, size_t until)
 	i = -1;
 	while (++i < until)
 		a->bits[i] = a->bits[i] ^ b->bits[i];
+}
+
+void	des_sbox_perm(t_des *des, size_t num)
+{
+	size_t	i;
+	size_t	j;
+	size_t	n;
+
+	i = des->x48data_r.bits[num * 6] * 2 + des->x48data_r.bits[num * 6 + 5];
+	j = des->x48data_r.bits[num * 6 + 4] + des->x48data_r.bits[num * 6 + 3] * 2 +
+		des->x48data_r.bits[num * 6 + 2] * 4 + des->x48data_r.bits[num * 6 + 1] * 8;
+	n = g_sboxes[num][i][j];
+	ft_printf(" i = %zu j = %zu n = %zu\n", i, j, n);
+	i = -1;
+	while (++i < 4)
+	{
+		des->x32data_r.bits[num * 4 + 3 - i] = n % 2;
+		n /= 2;
+	}
 }
