@@ -16,7 +16,11 @@
 
 void	des_encode(t_des *des)
 {
+	ft_printf("Block bits: ");
+	print_bits(des->block, 64);
 	des_initial_permutation(des);
+	ft_printf("Init  perm: ");
+	print_bits(des->block, 64);
 	des_data_halv(des);
 	des_expand_permut(des); //right part x32 permuts into x48
 
@@ -27,11 +31,9 @@ void	des_encode(t_des *des)
 
 void	key_processing(t_params *p, t_des *des)
 {
-	des_key_to_bits(&des, p->hex_key);
-	des_key_permutation(&des);
+	des_key_to_bits(des, p->hex_key);
+	des_key_permutation(des);
 	des->dround = 0;
-	ft_printf("Block bits: ");
-	print_bits(des->block, 64);
 	ft_printf("Keyx64:     ");
 	print_bits(des->x64key, 64);
 	ft_printf("Keyx56:     ");
@@ -65,13 +67,13 @@ void	des_reading(t_params *p) //without base64 flag
 		des_copy_key(&des);
 		des_encode(&des);
 	}
-	if (des.is_last == 0)
+	/*if (des.is_last == 0)
 	{
 		des.is_last = 1;
 		des_str_to_bits(&des, NULL);
 		des_copy_key(&des);
 		des_encode(&des);
-	}
+	}*/
 }
 
 void	des_base64_reading(t_params *p)

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
+#include "libft.h"
 
 static void	hex_to_bits(char c, t_bits *b, size_t from)
 {
@@ -37,7 +38,7 @@ void		des_str_to_bits(t_des *d, char *str)
 {
 	size_t	i;
 	size_t	j;
-	char	c;
+	unsigned char	c;
 	char	num;
 
 	i = 0;
