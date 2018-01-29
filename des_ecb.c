@@ -16,16 +16,24 @@
 
 void	des_encode(t_des *des)
 {
-	des->dround = 0;
-
-	ft_printf("Block bits: ");
-	print_bits(des->block, 64);
 	des_initial_permutation(des);
 	des_data_halv(des);
 	des_expand_permut(des); //right part x32 permuts into x48
 
+	//des_xor(&des->x48data_r, &des->x48key, 48);
+
+	des_final_permutation(des);
+}
+
+void	key_processing(t_params *p, t_des *des)
+{
+	des_key_to_bits(&des, p->hex_key);
+	des_key_permutation(&des);
+	des->dround = 0;
+	ft_printf("Block bits: ");
+	print_bits(des->block, 64);
 	ft_printf("Keyx64:     ");
-	print_bits(des->x56key, 64);
+	print_bits(des->x64key, 64);
 	ft_printf("Keyx56:     ");
 	print_bits(des->x56key, 56);
 	while (des->dround < 16) //creating 16 keys
@@ -37,9 +45,7 @@ void	des_encode(t_des *des)
 		print_bits(des->x48key[des->dround], 48);
 		des->dround++;
 	}
-	//des_xor(&des->x48data_r, &des->x48key, 48);
-
-	des_final_permutation(des);
+	des->dround = 0;
 }
 
 void	des_reading(t_params *p) //without base64 flag
@@ -48,8 +54,7 @@ void	des_reading(t_params *p) //without base64 flag
 	int		ret;
 	char	buf[9];
 
-	des_key_to_bits(&des, p->hex_key);
-	des_key_permutation(&des);
+	key_processing(p, &des);
 	des.is_last = 0;
 	while ((ret = read(p->input_fd, buf, 8)) > 0)
 	{
