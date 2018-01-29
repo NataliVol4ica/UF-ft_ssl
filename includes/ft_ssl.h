@@ -24,10 +24,12 @@ void		des_cbc(void *param);
 
 void		des_str_to_bits(t_des *d, char *str);
 void		des_key_to_bits(t_des *d, char *str);
-void		des_copy_key(t_des *des);
+void		des_data_halv(t_des *des);
+void		des_expand_permut(t_des *des);
+void		des_xor(t_bits *a, t_bits *b, size_t until);
 
 void		des_key_permutation(t_des *des);
-void		des_key_shift(t_des *des);
+void		des_key_shift_enc(t_des *des);
 void		des_compression_permutation(t_des *des);
 void		des_initial_permutation(t_des *des);
 void		des_final_permutation(t_des *des);
@@ -52,6 +54,8 @@ void		des_parse_flags(t_params *p);
 */
 
 t_params	*new_param(int ac, char **av);
+void		print_bits(t_bits bits, size_t len);
+void		des_copy_key(t_des *des);
 
 /*
 ** ERRORS

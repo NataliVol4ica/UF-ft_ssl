@@ -41,7 +41,7 @@ void	des_compression_permutation(t_des *des)
 
 	i = -1;
 	while (++i < 48)
-		des->x48key.bits[i] = des->x56key.bits[g_compress_permut[i] - 1];
+		des->x48key[des->dround].bits[i] = des->x56key.bits[g_compress_permut[i] - 1];
 }
 
 void	des_final_permutation(t_des *des)

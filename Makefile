@@ -82,3 +82,6 @@ norm:
 	@clear
 	@echo ${RED}[Checking the $(NAME) NORM]${NC}
 	@norminette $(CFILES) $(HFILES)
+
+test:
+	./ft_ssl des-ecb -i test4 -k 133457799BBCDFF1

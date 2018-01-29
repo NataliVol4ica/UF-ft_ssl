@@ -14,6 +14,19 @@
 #include "libft.h"
 #include "funcs.h"
 #include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int		main3(void)
+{
+	size_t	fd;
+
+	fd = open("test4", O_WRONLY | O_CREAT | O_TRUNC, 0666);
+	for (int i = 0; i < 8; i++)
+		ft_printf_fd(fd, "%c", ((i * 2) << 4) + i * 2 + 1);
+	close(fd);
+	return (0);
+}
 
 int		main2(void)
 {

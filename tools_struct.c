@@ -39,3 +39,13 @@ void	des_copy_key(t_des *des)
 	while (++i < 56)
 		des->x56key.bits[i] = des->x56key_initial.bits[i];
 }
+
+void	print_bits(t_bits bits, size_t len)
+{
+	size_t	i;
+
+	i = -1;
+	while (++i < len)
+		ft_printf("%d", bits.bits[i]);
+	ft_printf("\n");
+}

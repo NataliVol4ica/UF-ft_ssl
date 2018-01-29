@@ -56,11 +56,12 @@ typedef struct	s_des
 	_Bool	is_last;
 	t_bits	block;
 	t_bits	x64key;
-	t_bits	x56key;
 	t_bits	x56key_initial;
-	t_bits	x48key;
-	t_bits	key_left;
-	t_bits	key_right;
+	t_bits	x56key;
+	t_bits	x48key[16];
+	t_bits	x32data_l;
+	t_bits	x32data_r;
+	t_bits	x48data_r;
 	size_t	dround;
 }				t_des;
 

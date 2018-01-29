@@ -17,9 +17,28 @@
 void	des_encode(t_des *des)
 {
 	des->dround = 0;
+
+	ft_printf("Block bits: ");
+	print_bits(des->block, 64);
 	des_initial_permutation(des);
-	des_key_shift(des);
-	des_compression_permutation(des);
+	des_data_halv(des);
+	des_expand_permut(des); //right part x32 permuts into x48
+
+	ft_printf("Keyx64:     ");
+	print_bits(des->x56key, 64);
+	ft_printf("Keyx56:     ");
+	print_bits(des->x56key, 56);
+	while (des->dround < 16) //creating 16 keys
+	{
+		des_key_shift_enc(des);
+		des_compression_permutation(des);
+		
+		ft_printf("Subkey[%2zu]: ", des->dround);
+		print_bits(des->x48key[des->dround], 48);
+		des->dround++;
+	}
+	//des_xor(&des->x48data_r, &des->x48key, 48);
+
 	des_final_permutation(des);
 }
 
