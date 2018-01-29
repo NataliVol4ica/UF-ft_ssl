@@ -12,6 +12,7 @@
 
 #include "ft_ssl.h"
 #include <stdlib.h>
+#include "libft.h"
 
 t_params	*new_param(int ac, char **av)
 {
@@ -29,15 +30,6 @@ t_params	*new_param(int ac, char **av)
 	p->hex_key = NULL;
 	p->base64_flag = 0;
 	return (p);
-}
-
-void	des_copy_key(t_des *des)
-{
-	size_t	i;
-
-	i = -1;
-	while (++i < 56)
-		des->x56key.bits[i] = des->x56key_initial.bits[i];
 }
 
 void	print_bits(t_bits bits, size_t len)

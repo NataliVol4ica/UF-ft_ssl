@@ -32,7 +32,7 @@ void	des_key_permutation(t_des *des)
 
 	i = -1;
 	while (++i < 56)
-		des->x56key_initial.bits[i] = des->x64key.bits[g_key_permut[i] - 1];
+		des->x56key.bits[i] = des->x64key.bits[g_key_permut[i] - 1];
 }
 
 void	des_compression_permutation(t_des *des)

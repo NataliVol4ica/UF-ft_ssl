@@ -22,9 +22,19 @@ void	des_encode(t_des *des)
 	ft_printf("Init  perm: ");
 	print_bits(des->block, 64);
 	des_data_halv(des);
-	des_expand_permut(des); //right part x32 permuts into x48
+	ft_printf("Left      : ");
+	print_bits(des->x32data_l, 32);
+	ft_printf("Right     : ");
+	print_bits(des->x32data_r, 32);
+	des_expand_permut(des);
+	ft_printf("Expanded r: ");
+	print_bits(des->x48data_r, 48);
 
-	//des_xor(&des->x48data_r, &des->x48key, 48);
+	des_xor(&des->x48data_r, &des->x48key[des->dround], 48);
+	ft_printf("With key%2zu: ", des->dround);
+	print_bits(des->x48key[des->dround], 48);
+	ft_printf("After XOR : ");
+	print_bits(des->x48data_r, 48);
 
 	des_final_permutation(des);
 }
@@ -64,7 +74,6 @@ void	des_reading(t_params *p) //without base64 flag
 			des.is_last = 1;
 		buf[ret] = '\0';
 		des_str_to_bits(&des, &buf[0]);
-		des_copy_key(&des);
 		des_encode(&des);
 	}
 	/*if (des.is_last == 0)

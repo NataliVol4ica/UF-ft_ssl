@@ -56,7 +56,6 @@ typedef struct	s_des
 	_Bool	is_last;
 	t_bits	block;
 	t_bits	x64key;
-	t_bits	x56key_initial;
 	t_bits	x56key;
 	t_bits	x48key[16];
 	t_bits	x32data_l;

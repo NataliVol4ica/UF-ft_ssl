@@ -55,7 +55,6 @@ void		des_parse_flags(t_params *p);
 
 t_params	*new_param(int ac, char **av);
 void		print_bits(t_bits bits, size_t len);
-void		des_copy_key(t_des *des);
 
 /*
 ** ERRORS
