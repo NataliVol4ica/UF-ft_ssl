@@ -76,7 +76,7 @@ void	des_sbox_perm(t_des *des, size_t num)
 	j = des->x48data_r.bits[num * 6 + 4] + des->x48data_r.bits[num * 6 + 3] * 2 +
 		des->x48data_r.bits[num * 6 + 2] * 4 + des->x48data_r.bits[num * 6 + 1] * 8;
 	n = g_sboxes[num][i][j];
-	ft_printf(" i = %zu j = %zu n = %zu\n", i, j, n);
+	ft_printf("\t\t S-Box[%zu] : [%zu][%2zu] => %zu\n",num, i, j, n);
 	i = -1;
 	while (++i < 4)
 	{

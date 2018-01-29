@@ -16,30 +16,48 @@
 
 void	des_encode(t_des *des)
 {
+	size_t	i;
 	ft_printf("Block bits: ");
 	print_bits(des->block, 64);
 	des_initial_permutation(des);
 	ft_printf("Init  perm: ");
 	print_bits(des->block, 64);
 	des_data_halv(des);
-	ft_printf("Left      : ");
-	print_bits(des->x32data_l, 32);
-	ft_printf("Right     : ");
-	print_bits(des->x32data_r, 32);
-	des_expand_permut(des);
-	ft_printf("Expanded r: ");
-	print_bits(des->x48data_r, 48);
-
-	des_xor(&des->x48data_r, &des->x48key[des->dround], 48);
-	ft_printf("With key%2zu: ", des->dround);
-	print_bits(des->x48key[des->dround], 48);
-	ft_printf("After XOR : ");
-	print_bits(des->x48data_r, 48);
-
-	for (size_t i = 0; i < 8; i++)
-		des_sbox_perm(des, i);
-	ft_printf("After sbox: ");
-	print_bits(des->x32data_r, 32);
+	while (des->dround < 16)
+	{
+		ft_printf("===\\Round %zu/===\n", des->dround);
+		ft_printf(" Left             : ");
+		print_bits(des->x32data_l, 32);
+		ft_printf(" Right            : ");
+		print_bits(des->x32data_r, 32);
+		des_expand_permut(des);
+		ft_printf("\tExpanded r: ");
+		print_bits(des->x48data_r, 48);
+	
+		des_xor(&des->x48data_r, &des->x48key[des->dround], 48);
+		ft_printf("\tKey     %2zu: ", des->dround);
+		print_bits(des->x48key[des->dround], 48);
+		ft_printf("\tAfter XOR : ");
+		print_bits(des->x48data_r, 48);
+		for (size_t i = 0; i < 8; i++)
+			des_sbox_perm(des, i);
+		ft_printf("\tAfter sbox: ");
+		print_bits(des->x32data_r, 32);
+		des_pbox_permutation(des);
+		ft_printf("\tAfter pbox: ");
+		print_bits(des->x32data_r, 32);
+		des_xor(&des->x32data_r, &des->x32data_l, 32);
+		ft_printf("\tLeft      : ");
+		print_bits(des->x32data_l, 32);
+		ft_printf("\tAfter XOR : ");
+		print_bits(des->x32data_r, 32);
+		if (des->dround++ < 15)
+		{
+			i = -1;
+			while (++i < 32)
+				des->x32data_l.bits[i] = des->x32data_r.bits[i];
+		}
+	}
 	des_final_permutation(des);
 }
 
