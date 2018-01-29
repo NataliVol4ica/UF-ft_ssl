@@ -69,7 +69,7 @@ void	des_parse_flags(t_params *p)
 				p->av[i + 1][0] != '-')
 				p->output = p->av[i + 1];
 			else if (p->av[i][1] == 'a')
-				;//some a flag managing
+				p->base64_flag = 1;
 			else if (p->av[i][1] == 'k' && p->av[i + 1] &&
 					p->av[i + 1][0] != '-')
 				p->hex_key = p->av[i + 1];

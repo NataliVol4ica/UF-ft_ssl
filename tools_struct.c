@@ -27,5 +27,15 @@ t_params	*new_param(int ac, char **av)
 	p->output_fd = 0;
 	p->to_encrypt = 1;
 	p->hex_key = NULL;
+	p->base64_flag = 0;
 	return (p);
+}
+
+void	des_copy_key(t_des *des)
+{
+	size_t	i;
+
+	i = -1;
+	while (++i < 56)
+		des->x56key.bits[i] = des->x56key_initial.bits[i];
 }

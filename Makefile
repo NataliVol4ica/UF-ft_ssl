@@ -15,7 +15,9 @@ FILENAMES =	main \
 			des_ecb \
 			des_cbc \
 			parse_flags \
-			permutation
+			des_permutations1 \
+			des_permutations2 \
+			des_input_conv
 CFILES = $(patsubst %, $(SRCDIR)/%.c, $(FILENAMES))
 OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 

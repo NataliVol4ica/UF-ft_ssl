@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   des_cbc.c                                          :+:      :+:    :+:   */
+/*   des_permutations2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkolosov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/23 16:12:54 by nkolosov          #+#    #+#             */
-/*   Updated: 2018/01/23 16:12:54 by nkolosov         ###   ########.fr       */
+/*   Created: 2018/01/23 17:46:50 by nkolosov          #+#    #+#             */
+/*   Updated: 2018/01/23 17:46:51 by nkolosov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
-#include <unistd.h>
+#include "permutations.h"
 
-void	des_cbc(void *param)
+void	des_key_shift(t_des *des)
 {
-	t_params	*p;
+	size_t	i;
+	size_t	j;
+	_Bool	temp;
 
-	p = (t_params*)param;
-	base64_parse_flags(p);
-	
-	if (p->input)
-		close(p->input_fd);
-	if (p->output)
-		close(p->output_fd);
+	i = -1;
+	while (++i < g_key_shift[des->dround])
+	{
+		temp = des->x56key.bits[0];
+		j = -1;
+		while (++j < 27)
+			des->x56key.bits[j] = des->x56key.bits[j + 1];
+		des->x56key.bits[27] = temp;
+		temp = des->x56key.bits[28];
+		j = 27;
+		while (++j < 55)
+			des->x56key.bits[j] = des->x56key.bits[j + 1];
+		des->x56key.bits[55] = temp;
+	}
 }

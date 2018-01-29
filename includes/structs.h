@@ -37,6 +37,7 @@ typedef struct	s_params
 	int		output_fd;
 	_Bool	to_encrypt;
 	char	*hex_key;
+	_Bool	base64_flag;
 }				t_params;
 
 typedef struct	s_read
@@ -52,10 +53,15 @@ typedef struct	s_bits
 
 typedef struct	s_des
 {
+	_Bool	is_last;
 	t_bits	block;
 	t_bits	x64key;
 	t_bits	x56key;
-
+	t_bits	x56key_initial;
+	t_bits	x48key;
+	t_bits	key_left;
+	t_bits	key_right;
+	size_t	dround;
 }				t_des;
 
 static char		*g_alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

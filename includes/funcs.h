@@ -15,7 +15,7 @@
 
 # include "ft_ssl.h"
 
-# define NUM_OF_FUNCS 2
+# define NUM_OF_FUNCS 4
 
 static t_func	g_parse_funcs[] =
 {

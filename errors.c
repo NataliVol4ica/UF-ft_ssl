@@ -21,18 +21,18 @@ void	malloc_error(void)
 
 void	invalid_flag(char *str)
 {
-	ft_printf("Invalid flag: %s. Exiting the program\n", str);
+	ft_printf("Invalid flag: %s.\n", str);
 	exit(1);
 }
 
 void	open_error(char *str)
 {
-	ft_printf("Error opening %s. Exiting the program\n", str);
+	ft_printf("Error opening %s.\n", str);
 	exit(1);
 }
 
-void	key_error()
+void	key_error(void)
 {
-	ft_printf("Key is not hexademical. Exiting the program\n");
+	ft_printf("Key is not hexademical.\n");
 	exit(1);
 }

@@ -16,25 +16,36 @@
 # include "structs.h"
 
 /*
-** CRYPTOGRAPHY FUNCS
+** DES
+*/
+
+void		des_ecb(void *param);
+void		des_cbc(void *param);
+
+void		des_str_to_bits(t_des *d, char *str);
+void		des_key_to_bits(t_des *d, char *str);
+void		des_copy_key(t_des *des);
+
+void		des_key_permutation(t_des *des);
+void		des_key_shift(t_des *des);
+void		des_compression_permutation(t_des *des);
+void		des_initial_permutation(t_des *des);
+void		des_final_permutation(t_des *des);
+
+/*
+** BASE64
 */
 
 void		base64(void *param);
 void		x8_to_x6(t_params *p, t_read *reader);
 void		x6_to_x8(t_params *p, t_read *reader);
 
-void		des_ecb(void *param);
-
-void		des_cbc(void *param);
+/*
+** FLAG PARSING
+**/
 
 void		base64_parse_flags(t_params *p);
 void		des_parse_flags(t_params *p);
-
-void		str_to_bits(t_des *d, char *str);
-void		key_to_bits(t_des *d, char *str);
-
-void		initial_permutation(t_des *des);
-void		key_permutation(t_des *des);
 
 /*
 ** STRUCT TOOLS
@@ -49,6 +60,6 @@ t_params	*new_param(int ac, char **av);
 void		malloc_error(void);
 void		invalid_flag(char *str);
 void		open_error(char *str);
-void		key_error();
+void		key_error(void);
 
 #endif
