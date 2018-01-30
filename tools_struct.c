@@ -38,6 +38,10 @@ void	print_bits(t_bits bits, size_t len)
 
 	i = -1;
 	while (++i < len)
+	{
 		ft_printf("%d", bits.bits[i]);
+		if (i > 0 && i < len - 1 && i % 4 == 3)
+			ft_printf(" ");
+	}
 	ft_printf("\n");
 }

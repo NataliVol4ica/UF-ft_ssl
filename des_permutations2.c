@@ -76,11 +76,24 @@ void	des_sbox_perm(t_des *des, size_t num)
 	j = des->x48data_r.bits[num * 6 + 4] + des->x48data_r.bits[num * 6 + 3] * 2 +
 		des->x48data_r.bits[num * 6 + 2] * 4 + des->x48data_r.bits[num * 6 + 1] * 8;
 	n = g_sboxes[num][i][j];
-	ft_printf("\t\t S-Box[%zu] : [%zu][%2zu] => %zu\n",num, i, j, n);
+	//ft_printf("\t\t S-Box[%zu] : [%zu][%2zu] => %zu\n",num, i, j, n);
 	i = -1;
 	while (++i < 4)
 	{
 		des->x32data_r.bits[num * 4 + 3 - i] = n % 2;
 		n /= 2;
 	}
+}
+
+void	des_pbox_permutation(t_des *des)
+{
+	static t_bits	temp;
+	size_t			i;
+
+	i = -1;
+	while (++i < 32)
+		temp.bits[i] = des->x32data_r.bits[i];
+	i = -1;
+	while (++i < 32)
+		des->x32data_r.bits[i] = temp.bits[g_pbox_permut[i] - 1];
 }
