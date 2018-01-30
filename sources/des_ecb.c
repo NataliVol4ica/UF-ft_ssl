@@ -103,9 +103,12 @@ void	des_reading(t_params *p) //without base64 flag
 	size_t	j;
 	size_t	k;
 	size_t	num;
+	size_t	print_len;
 
 	t_list	*list;
 	char	*str;
+
+	print_len = 8;
 
 	key_processing(p, &des);
 	des.is_last = 0;
@@ -137,11 +140,15 @@ void	des_reading(t_params *p) //without base64 flag
 					buf[k] = num;
 			}
 		}
+		if (j == 8 && !str[i + 8] && !p->to_encrypt)
+			des.is_last = 1;
 		buf[8] = '\0';
 		des_str_to_bits(&des, &buf[0]);
 		des_encode(&des);
 		des_bits_to_str(&des, &buf[0]);
-		ft_printf_fd(p->output_fd, "%8s", buf);
+		if (!p->to_encrypt && des.is_last)
+			print_len = 8 - buf[7];
+		ft_printf_fd(p->output_fd, "%.*s", print_len, buf);
 		i += j;
 	}
 }
