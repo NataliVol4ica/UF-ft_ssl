@@ -25,6 +25,7 @@ void	des_encode(t_des *des)
 	//ft_printf("Init  perm: ");
 	//print_bits(des->block, 64);
 	des_data_halv(des);
+	des->dround = 0;
 	while (des->dround < 16)
 	{
 		i = -1;
@@ -69,7 +70,7 @@ void	des_encode(t_des *des)
 	while (++i < 32)
 		des->block.bits[32 + i] = des->x32data_l.bits[i];
 	des_final_permutation(des);
-	print_bits(des->block, 64);
+	//print_bits(des->block, 64);
 }
 
 void	key_processing(t_params *p, t_des *des)
@@ -89,7 +90,6 @@ void	key_processing(t_params *p, t_des *des)
 		//print_bits(des->x48key[des->dround], 48);
 		des->dround++;
 	}
-	des->dround = 0;
 }
 
 void	des_reading(t_params *p) //without base64 flag
@@ -100,13 +100,19 @@ void	des_reading(t_params *p) //without base64 flag
 
 	key_processing(p, &des);
 	des.is_last = 0;
-	while ((ret = read(p->input_fd, buf, 8)) > 0)
+	while ((ret = read(p->input_fd, buf, 8)) > 0 || des.is_last == 0)
 	{
-		if ((read(p->input_fd, buf, 0)) == 0)
+		if (ret == 0)
+		{
 			des.is_last = 1;
+			for (int i = 0; i < 8; i++)
+				buf[i] = 8;
+		}
 		buf[ret] = '\0';
 		des_str_to_bits(&des, &buf[0]);
 		des_encode(&des);
+		des_bits_to_str(&des, &buf[0]);
+		ft_printf_fd(p->output_fd, "%8s", buf);
 	}
 	/*if (des.is_last == 0)
 	{

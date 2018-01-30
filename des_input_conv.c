@@ -81,3 +81,20 @@ void		des_key_to_bits(t_des *d, char *str)
 	while (++i < 16)
 		hex_to_bits('0', &d->x64key, i * 4);
 }
+
+void		des_bits_to_str(t_des *d, char *str)
+{
+	unsigned char	c;
+	size_t	i;
+	size_t	j;
+
+	i = -1;
+	while (++i < 8)
+	{
+		j = -1;
+		c = 0;
+		while (++j < 8)
+			c = c * 2 + d->block.bits[i * 8 + j];
+		str[i] = c;
+	}
+}
