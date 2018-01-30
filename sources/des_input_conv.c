@@ -34,12 +34,31 @@ static void	hex_to_bits(char c, t_bits *b, size_t from)
 	}
 }
 
+static void	fill_remainder(t_des *d, size_t i)
+{
+	size_t			j;
+	unsigned char	c;
+	char			num;
+
+	num = 8 - i;
+	i--;
+	while (++i < 8)
+	{
+		c = num;
+		j = -1;
+		while (++j < 8)
+		{
+			d->block.bits[i * 8 + 7 - j] = c % 2;
+			c /= 2;
+		}
+	}
+}
+
 void		des_str_to_bits(t_des *d, char *str)
 {
-	size_t	i;
-	size_t	j;
+	size_t			i;
+	size_t			j;
 	unsigned char	c;
-	char	num;
 
 	i = 0;
 	while (str && str[i] && i < 8)
@@ -53,21 +72,8 @@ void		des_str_to_bits(t_des *d, char *str)
 		}
 		i++;
 	}
-	if (i != 8)
-	{
-		num = 8 - i;
-		while (i < 8)
-		{
-			c = num;
-			j = -1;
-			while (++j < 8)
-			{
-				d->block.bits[i * 8 + 7 - j] = c % 2;
-				c /= 2;
-			}
-			i++;
-		}
-	}
+	fill_remainder(d, i);
+	
 }
 
 void		des_key_to_bits(t_des *d, char *str)
@@ -85,8 +91,8 @@ void		des_key_to_bits(t_des *d, char *str)
 void		des_bits_to_str(t_des *d, char *str)
 {
 	unsigned char	c;
-	size_t	i;
-	size_t	j;
+	size_t			i;
+	size_t			j;
 
 	i = -1;
 	while (++i < 8)

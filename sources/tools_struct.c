@@ -32,7 +32,7 @@ t_params	*new_param(int ac, char **av)
 	return (p);
 }
 
-void	print_bits(t_bits bits, size_t len)
+void		print_bits(t_bits bits, size_t len)
 {
 	size_t	i;
 

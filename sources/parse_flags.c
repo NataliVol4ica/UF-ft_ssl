@@ -26,7 +26,7 @@ static void	open_files(t_params *p)
 		open_error(p->output);
 }
 
-void	base64_parse_flags(t_params *p)
+void		base64_parse_flags(t_params *p)
 {
 	size_t	i;
 
@@ -50,7 +50,7 @@ void	base64_parse_flags(t_params *p)
 	open_files(p);
 }
 
-void	des_parse_flags(t_params *p)
+void		des_parse_flags(t_params *p)
 {
 	size_t	i;
 

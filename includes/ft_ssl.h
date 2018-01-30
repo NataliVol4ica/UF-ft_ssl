@@ -49,7 +49,7 @@ void		x6_to_x8(t_params *p, t_read *reader);
 
 /*
 ** FLAG PARSING
-**/
+*/
 
 void		base64_parse_flags(t_params *p);
 void		des_parse_flags(t_params *p);

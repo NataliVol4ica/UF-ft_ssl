@@ -5,6 +5,7 @@ HEADERS =	ft_ssl \
 			funcs \
 			permutations
 INCDIR = ./includes
+SRCDIR = ./sources
 HFILES = $(patsubst %, $(INCDIR)/%.h, $(HEADERS))
 
 FILENAMES =	main \
@@ -15,9 +16,11 @@ FILENAMES =	main \
 			des_ecb \
 			des_cbc \
 			parse_flags \
-			des_permutations1 \
-			des_permutations2 \
-			des_input_conv
+			des_input_conv \
+			des_tools \
+			des_shifts \
+			des_block_permuts \
+			des_keys_permuts 
 CFILES = $(patsubst %, $(SRCDIR)/%.c, $(FILENAMES))
 OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 
@@ -53,7 +56,7 @@ $(NAME): $(ODIR) $(HFILES) $(OFILES)
 	gcc $(FLAGS) $(OFILES) $(LIBFT) -o $(NAME)
 	@echo ${GREEN}"[========| $(NAME) is up to date. |========]"${NC}
 
-$(ODIR)/%.o: %.c $(HFILES) $(LIBFT)
+$(ODIR)/%.o: $(SRCDIR)/%.c $(HFILES) $(LIBFT)
 	gcc $(FLAGS) -o $@ -c $< -I$(INCDIR) -I$(LIBINCDIR)
 
 $(ODIR):
@@ -65,10 +68,12 @@ $(LIBFT):
 clean:
 	@echo ${RED}[Removing $(NAME) *.o files]${NC}
 	@/bin/rm -rf $(ODIR)
+	@make clean -C ./libft
 	
 fclean: clean
 	@echo ${RED}[Removing executable $(NAME) file]${NC}
 	@/bin/rm -f $(NAME)
+	@make fclean -C ./libft
 
 re: fclean all
 
