@@ -55,13 +55,16 @@ void	key_processing(t_params *p, t_des *des)
 	des->dround = 0;
 	while (des->dround < 16)
 	{
-		des_key_shift_enc(des);
+		if (p->to_encrypt)
+			des_key_shift_enc(des);
+		else
+			des_key_shift_dec(des);
 		des_compression_permutation(des);
 		des->dround++;
 	}
 }
 
-void	des_reading(t_params *p) //without base64 flag
+void	des_reading2(t_params *p) //without base64 flag
 {
 	t_des	des;
 	int		ret;
@@ -72,18 +75,74 @@ void	des_reading(t_params *p) //without base64 flag
 	des.is_last = 0;
 	while ((ret = read(p->input_fd, buf, 8)) > 0 || des.is_last == 0)
 	{
-		if (ret == 0)
+		if (ret < 8 && p->to_encrypt)
 		{
 			des.is_last = 1;
-			i = -1;
+			i = ret - 1;
 			while (++i < 8)
 				buf[i] = 8;
 		}
+		else if (ret < 8 && ret > 0)
+			des_block_error();
+		if (ret == 0 && !p->to_encrypt)
+			break;
 		buf[ret] = '\0';
 		des_str_to_bits(&des, &buf[0]);
 		des_encode(&des);
 		des_bits_to_str(&des, &buf[0]);
 		ft_printf_fd(p->output_fd, "%8s", buf);
+	}
+}
+
+void	des_reading(t_params *p) //without base64 flag
+{
+	t_des	des;
+	int		ret;
+	char	buf[9];
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	size_t	num;
+
+	t_list	*list;
+	char	*str;
+
+	key_processing(p, &des);
+	des.is_last = 0;
+	list = NULL;
+	while ((ret = read(p->input_fd, buf, 8)) > 0)
+	{
+		buf[ret] = '\0';
+		ft_lstpushback(&list, ft_lstnew((void*)(&buf[0]), ret + 1));
+	}
+	str = ft_list_to_string(list);
+	ft_lstdel(&list, NULL);
+	i = 0;
+	while (str[i] || des.is_last == 0)
+	{
+		j = 0;
+		while (str[i + j] && j < 8)
+		{
+			buf[j] = str[i + j];
+			j++;
+		}
+		if (j < 8)
+		{
+			des.is_last = 1;
+			if (p->to_encrypt)
+			{
+				num = 8 - j;
+				k = j - 1;
+				while (++k < 8)
+					buf[k] = num;
+			}
+		}
+		buf[8] = '\0';
+		des_str_to_bits(&des, &buf[0]);
+		des_encode(&des);
+		des_bits_to_str(&des, &buf[0]);
+		ft_printf_fd(p->output_fd, "%8s", buf);
+		i += j;
 	}
 }
 

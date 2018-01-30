@@ -36,3 +36,9 @@ void	key_error(void)
 	ft_printf("Key is not hexademical.\n");
 	exit(1);
 }
+
+void	des_block_error(void)
+{
+	ft_printf("DES: bad decrypt.\n");
+	exit(1);
+}

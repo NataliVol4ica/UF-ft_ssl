@@ -31,6 +31,7 @@ void		des_xor(t_bits *a, t_bits *b, size_t until);
 
 void		des_key_permutation(t_des *des);
 void		des_key_shift_enc(t_des *des);
+void		des_key_shift_dec(t_des *des);
 void		des_compression_permutation(t_des *des);
 
 void		des_initial_permutation(t_des *des);
@@ -69,5 +70,6 @@ void		malloc_error(void);
 void		invalid_flag(char *str);
 void		open_error(char *str);
 void		key_error(void);
+void		des_block_error(void);
 
 #endif

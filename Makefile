@@ -90,3 +90,7 @@ norm:
 
 test:
 	./ft_ssl des-ecb -i test4 -k 133457799BBCDFF1
+
+dec:
+	./ft_ssl des-ecb -d -i fres -k 133457799BBCDFF1
+
