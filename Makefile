@@ -10,7 +10,8 @@ HFILES = $(patsubst %, $(INCDIR)/%.h, $(HEADERS))
 
 FILENAMES =	main \
 			tools_struct \
-			errors \
+			errors1 \
+			errors2 \
 			reading \
 			base64 \
 			base64_converters \
@@ -94,4 +95,4 @@ test:
 
 dec:
 	./ft_ssl des-ecb -d -i fres -k 133457799BBCDFF1
-
+#echo "totojfd;lkgl;fdk;ldfjhlkjdflkhjf;dgkpikfopekdopgniorsn[ejsnopgsw" | ./ft_ssl base64 -e

@@ -25,7 +25,7 @@ t_params	*new_param(int ac, char **av)
 	p->input = NULL;
 	p->output = NULL;
 	p->input_fd = 0;
-	p->output_fd = 0;
+	p->output_fd = 1;
 	p->to_encrypt = 1;
 	p->hex_key = NULL;
 	p->base64_flag = 0;

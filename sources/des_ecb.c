@@ -111,7 +111,6 @@ char	*des_str_processing(t_params *p, char *str) //without base64 flag
 			print_len = 8 - buf[7];
 		buf[print_len] = '\0';
 		ft_lstpushback(&list, ft_lstnew((void*)(&buf[0]), print_len + 1));
-		//ft_printf_fd(p->output_fd, "%.*s", print_len, buf);
 		i += j;
 	}
 	ans = ft_list_to_string(list);

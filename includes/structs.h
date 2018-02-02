@@ -42,8 +42,8 @@ typedef struct	s_params
 
 typedef struct	s_read
 {
-	unsigned char	x8[3];
-	unsigned char	x6[4];
+	unsigned char	x8[4];
+	unsigned char	x6[5];
 }				t_read;
 
 typedef struct	s_bits

@@ -73,5 +73,6 @@ void		invalid_flag(char *str);
 void		open_error(char *str);
 void		key_error(void);
 void		des_block_error(void);
+void		base64_block_error(void);
 
 #endif
