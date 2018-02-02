@@ -11,6 +11,7 @@ HFILES = $(patsubst %, $(INCDIR)/%.h, $(HEADERS))
 FILENAMES =	main \
 			tools_struct \
 			errors \
+			reading \
 			base64 \
 			base64_converters \
 			des_ecb \

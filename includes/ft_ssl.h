@@ -15,6 +15,8 @@
 
 # include "structs.h"
 
+char		*read_input(t_params *p);
+
 /*
 ** DES
 */
