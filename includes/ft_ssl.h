@@ -47,6 +47,10 @@ void		des_final_permutation(t_des *des);
 */
 
 void		base64(void *param);
+
+char		*base64_encrypt(t_params *p, char *str);
+char		*base64_decrypt(t_params *p, char *str);
+
 void		x8_to_x6(t_params *p, t_read *reader);
 void		x6_to_x8(t_params *p, t_read *reader);
 

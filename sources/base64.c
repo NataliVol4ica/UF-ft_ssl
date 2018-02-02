@@ -15,7 +15,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char	*base64_encrypt(t_params *p, char *str)
+char	*base64_encrypt(t_params *p, char *str)
 {
 	char		*ans;
 	size_t		i;
@@ -57,7 +57,7 @@ static char	*base64_encrypt(t_params *p, char *str)
 	return (ans);
 }
 
-static char	*base64_decrypt(t_params *p, char *str)
+char	*base64_decrypt(t_params *p, char *str)
 {
 	char		*ans;
 	size_t		i;

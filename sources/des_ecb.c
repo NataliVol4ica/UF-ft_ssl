@@ -13,6 +13,7 @@
 #include "ft_ssl.h"
 #include <unistd.h>
 #include "libft.h"
+#include <stdlib.h>
 
 void	des_encode(t_des *des)
 {
@@ -129,7 +130,19 @@ void	des_ecb(void *param)
 	if (!p->hex_key)
 		p->hex_key = getpass("enter des key in hex: ");
 	str = read_input(p);
+	if (p->base64_flag && !p->to_encrypt)
+	{
+		ans = base64_decrypt(p, str);
+		free(str);
+		str = ans;
+	}
 	ans = des_str_processing(p, str);
+	if (p->base64_flag && p->to_encrypt)
+	{
+		str = base64_encrypt(p, ans);
+		free(ans);
+		ans = str;
+	}
 	ft_printf_fd(p->output_fd, "%s", ans);
 	if (p->input)
 		close(p->input_fd);
