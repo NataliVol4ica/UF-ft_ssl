@@ -15,8 +15,8 @@ FILENAMES =	main \
 			reading \
 			base64 \
 			base64_converters \
-			des_ecb \
-			des_cbc \
+			des_processing \
+			des \
 			parse_flags \
 			des_input_conv \
 			des_tools \
@@ -28,7 +28,7 @@ OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 
 LIBDIR = ./libft
 LIBFT = $(LIBDIR)/libft.a
-FLAGS = #-Wall -Wextra -Werror -O3
+FLAGS = -Wall -Wextra -Werror -O3
 LIBINCDIR = $(LIBDIR)/includes
 
 ODIR = ./obj

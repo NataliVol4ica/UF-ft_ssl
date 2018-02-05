@@ -65,6 +65,7 @@ typedef struct	s_des
 	t_bits	x32data_r;
 	t_bits	x48data_r;
 	size_t	dround;
+	char	*str;
 }				t_des;
 
 static char		*g_alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

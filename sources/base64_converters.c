@@ -12,7 +12,7 @@
 
 #include "ft_ssl.h"
 
-void	x8_to_x6(t_params *p, t_read *reader)
+void	x8_to_x6(t_read *reader)
 {
 	reader->x6[0] = (reader->x8[0] >> 2);
 	reader->x6[1] = reader->x8[0] << 6;
@@ -23,7 +23,7 @@ void	x8_to_x6(t_params *p, t_read *reader)
 	reader->x6[3] = reader->x6[3] >> 2;
 }
 
-void	x6_to_x8(t_params *p, t_read *reader)
+void	x6_to_x8(t_read *reader)
 {
 	size_t	i;
 	size_t	j;

@@ -75,7 +75,7 @@ void		des_str_to_bits(t_des *d, char *str)
 	fill_remainder(d, i);
 }
 
-void		des_key_to_bits(t_des *d, char *str, t_bits *b)
+void		des_key_to_bits(char *str, t_bits *b)
 {
 	size_t		i;
 

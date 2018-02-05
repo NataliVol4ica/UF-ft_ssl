@@ -26,8 +26,12 @@ void		des_cbc(void *param);
 
 char		*des_str_processing(t_params *p, char *str);
 
+void		key_processing(t_params *p, t_des *des);
+void		proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc);
+void		proceed_des_mode_final(t_des_m mode, t_des *des, _Bool enc);
+
 void		des_str_to_bits(t_des *d, char *str);
-void		des_key_to_bits(t_des *d, char *str, t_bits *b);
+void		des_key_to_bits(char *str, t_bits *b);
 void		des_bits_to_str(t_des *d, char *str);
 
 void		des_data_halv(t_des *des);
@@ -50,18 +54,18 @@ void		des_final_permutation(t_des *des);
 
 void		base64(void *param);
 
-char		*base64_encrypt(t_params *p, char *str);
-char		*base64_decrypt(t_params *p, char *str);
+char		*base64_encrypt(char *str);
+char		*base64_decrypt(char *str);
 
-void		x8_to_x6(t_params *p, t_read *reader);
-void		x6_to_x8(t_params *p, t_read *reader);
+void		x8_to_x6(t_read *reader);
+void		x6_to_x8(t_read *reader);
 
 /*
 ** FLAG PARSING
 */
 
 void		base64_parse_flags(t_params *p);
-void		des_parse_flags(t_params *p);
+void		des_parse_flags(t_params *p, size_t i);
 
 /*
 ** STRUCT TOOLS

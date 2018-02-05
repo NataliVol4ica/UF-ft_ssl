@@ -50,11 +50,8 @@ void		base64_parse_flags(t_params *p)
 	open_files(p);
 }
 
-void		des_parse_flags(t_params *p)
+void		des_parse_flags(t_params *p, size_t i)
 {
-	size_t	i;
-
-	i = -1;
 	while (++i < p->ac)
 		if (p->av[i][0] == '-' && p->av[i][2] == '\0')
 		{
