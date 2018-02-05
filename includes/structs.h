@@ -15,10 +15,10 @@
 
 # include <string.h>
 
-typedef enum	e_encoding_type
+typedef enum	e_des_m
 {
-	UNKNOWN = 0, BASE64 = 2
-}				t_encoding_type;
+	ECB = 0, CBC, TRIPLE
+}				t_des_m;
 
 typedef void	(*t_pars_func)(void*);
 typedef struct	s_func
@@ -29,6 +29,7 @@ typedef struct	s_func
 
 typedef struct	s_params
 {
+	t_des_m	mode;
 	size_t	ac;
 	char	**av;
 	char	*input;
@@ -37,6 +38,7 @@ typedef struct	s_params
 	int		output_fd;
 	_Bool	to_encrypt;
 	char	*hex_key;
+	char	*iv;
 	_Bool	base64_flag;
 }				t_params;
 
@@ -55,6 +57,7 @@ typedef struct	s_des
 {
 	_Bool	is_last;
 	t_bits	block;
+	t_bits	iv;
 	t_bits	x64key;
 	t_bits	x56key;
 	t_bits	x48key[16];

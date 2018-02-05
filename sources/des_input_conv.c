@@ -73,19 +73,18 @@ void		des_str_to_bits(t_des *d, char *str)
 		i++;
 	}
 	fill_remainder(d, i);
-	
 }
 
-void		des_key_to_bits(t_des *d, char *str)
+void		des_key_to_bits(t_des *d, char *str, t_bits *b)
 {
 	size_t		i;
 
 	i = -1;
 	while (str[++i] && i < 16)
-		hex_to_bits(str[i], &d->x64key, i * 4);
+		hex_to_bits(str[i], b, i * 4);
 	i--;
 	while (++i < 16)
-		hex_to_bits('0', &d->x64key, i * 4);
+		hex_to_bits('0', b, i * 4);
 }
 
 void		des_bits_to_str(t_des *d, char *str)

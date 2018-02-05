@@ -60,6 +60,8 @@ void		des_parse_flags(t_params *p)
 		{
 			if (p->av[i][1] == 'd')
 				p->to_encrypt = 0;
+			else if (p->av[i][1] == 'v')
+				p->iv = p->av[i + 1];
 			else if (p->av[i][1] == 'e')
 				p->to_encrypt = 1;
 			else if (p->av[i][1] == 'i' && p->av[i + 1] &&

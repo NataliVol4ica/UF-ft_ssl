@@ -24,8 +24,10 @@ char		*read_input(t_params *p);
 void		des_ecb(void *param);
 void		des_cbc(void *param);
 
+char		*des_str_processing(t_params *p, char *str);
+
 void		des_str_to_bits(t_des *d, char *str);
-void		des_key_to_bits(t_des *d, char *str);
+void		des_key_to_bits(t_des *d, char *str, t_bits *b);
 void		des_bits_to_str(t_des *d, char *str);
 
 void		des_data_halv(t_des *des);

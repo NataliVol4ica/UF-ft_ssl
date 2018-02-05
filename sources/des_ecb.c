@@ -51,7 +51,7 @@ void	des_encode(t_des *des)
 
 void	key_processing(t_params *p, t_des *des)
 {
-	des_key_to_bits(des, p->hex_key);
+	des_key_to_bits(des, p->hex_key, &des->x64key);
 	des_key_permutation(des);
 	des->dround = 0;
 	while (des->dround < 16)
@@ -63,9 +63,31 @@ void	key_processing(t_params *p, t_des *des)
 		des_compression_permutation(des);
 		des->dround++;
 	}
+	if (p->mode == CBC)
+		des_key_to_bits(des, p->iv, &des->iv);
 }
 
-char	*des_str_processing(t_params *p, char *str) //without base64 flag
+void	proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc)
+{
+	if (mode == CBC && enc)
+	{
+		des_xor(&des->block, &des->iv, 64);
+	}
+}
+
+void	proceed_des_mode_final(t_des_m mode, t_des *des, _Bool enc)
+{
+	size_t	i;
+
+	if (mode == CBC && enc)
+	{
+		i = -1;
+		while (++i < 64)
+			des->iv.bits[i] = des->block.bits[i];
+	}
+}
+
+char	*des_str_processing(t_params *p, char *str)
 {
 	t_des	des;
 	int		ret;
@@ -106,7 +128,9 @@ char	*des_str_processing(t_params *p, char *str) //without base64 flag
 			des.is_last = 1;
 		buf[8] = '\0';
 		des_str_to_bits(&des, &buf[0]);
+		proceed_des_mode_pre(p->mode, &des, p->to_encrypt);
 		des_encode(&des);
+		proceed_des_mode_final(p->mode, &des, p->to_encrypt);
 		des_bits_to_str(&des, &buf[0]);
 		if (!p->to_encrypt && des.is_last)
 			print_len = 8 - buf[7];
@@ -126,6 +150,7 @@ void	des_ecb(void *param)
 	char		*ans;
 
 	p = (t_params*)param;
+	p->mode = ECB;
 	des_parse_flags(p);
 	if (!p->hex_key)
 		p->hex_key = getpass("enter des key in hex: ");

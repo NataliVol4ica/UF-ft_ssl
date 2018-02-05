@@ -94,7 +94,7 @@ char	*base64_decrypt(t_params *p, char *str)
 	return (ans);
 }
 
-void		base64(void *param)
+void	base64(void *param)
 {
 	t_params	*p;
 	char		*str;

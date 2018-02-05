@@ -33,7 +33,7 @@ void	open_error(char *str)
 
 void	key_error(void)
 {
-	ft_printf("Key is not hexademical.\n");
+	ft_printf("That was not hexademical.\nD:<\n");
 	exit(1);
 }
 
