@@ -69,7 +69,7 @@ void	key_processing(t_params *p, t_des *des)
 
 void	proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc)
 {
-	if (mode == CBC && enc)
+	if (mode == CBC)
 	{
 		des_xor(&des->block, &des->iv, 64);
 	}
@@ -79,13 +79,14 @@ void	proceed_des_mode_final(t_des_m mode, t_des *des, _Bool enc)
 {
 	size_t	i;
 
-	if (mode == CBC && enc)
+	if (mode == CBC)
 	{
 		i = -1;
 		while (++i < 64)
 			des->iv.bits[i] = des->block.bits[i];
 	}
 }
+ echo "zqYWONX68rWNxl7msIdGC67Uh2HfVEBo" | ft_ssl des-cbc -d -a -k 6162636461626364 -v 0011223344556677
 
 char	*des_str_processing(t_params *p, char *str)
 {
