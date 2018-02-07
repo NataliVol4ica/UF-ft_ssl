@@ -64,7 +64,8 @@ char	hex_from_dec(char *buf, _Bool is_cap);
 ** LIST FUNCS
 */
 
-char	*ft_list_to_string(t_list *t);
+char	*ft_list_to_string(t_list *t, size_t *len);
+char	*ft_list_to_string_x64(t_list *t, size_t *len);
 void	ft_lstadd(t_list **alst, t_list *new);
 t_list	*ft_lstcontains(t_list *t, void *data, size_t size);
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));

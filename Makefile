@@ -90,9 +90,13 @@ norm:
 	@echo ${RED}[Checking the $(NAME) NORM]${NC}
 	@norminette $(CFILES) $(HFILES)
 
-test:
-	./ft_ssl des-ecb -i test4 -k 133457799BBCDFF1
-
 dec:
 	./ft_ssl des-ecb -d -i fres -k 133457799BBCDFF1
 #echo "totojfd;lkgl;fdk;ldfjhlkjdflkhjf;dgkpikfopekdopgniorsn[ejsnopgsw" | ./ft_ssl base64 -e
+
+tester: tester.c
+	gcc tester.c -o tester
+
+test: tester
+	@./tester
+	@sh test.sh || true

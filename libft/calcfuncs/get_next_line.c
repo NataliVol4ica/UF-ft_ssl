@@ -63,7 +63,7 @@ static int		read_the_line(int fd, char **left, char **line, t_list *fd_elem)
 		if (ret != new_str_size)
 			break ;
 	}
-	*line = ft_list_to_string(readlist);
+	*line = ft_list_to_string(readlist, NULL);
 	do_free(&readlist, left, fd_elem);
 	if (ret == 0 && (*line)[0] == '\0')
 		return (0);

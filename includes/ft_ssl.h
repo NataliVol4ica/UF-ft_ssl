@@ -14,8 +14,9 @@
 # define FT_SSL_H
 
 # include "structs.h"
+# include "libft.h"
 
-char		*read_input(t_params *p);
+t_str		*read_input(t_params *p);
 
 /*
 ** DES
@@ -24,7 +25,7 @@ char		*read_input(t_params *p);
 void		des_ecb(void *param);
 void		des_cbc(void *param);
 
-char		*des_str_processing(t_params *p, char *str);
+t_str		*des_str_processing(t_params *p, t_str *str);
 
 void		key_processing(t_params *p, t_des *des);
 void		proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc);
@@ -54,8 +55,8 @@ void		des_final_permutation(t_des *des);
 
 void		base64(void *param);
 
-char		*base64_encrypt(char *str);
-char		*base64_decrypt(char *str);
+t_str		*base64_encrypt(t_str *str);
+t_str		*base64_decrypt(t_str *str);
 
 void		x8_to_x6(t_read *reader);
 void		x6_to_x8(t_read *reader);

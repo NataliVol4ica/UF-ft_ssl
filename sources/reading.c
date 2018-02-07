@@ -13,23 +13,22 @@
 #include "ft_ssl.h"
 #include "libft.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 #define READ_SIZE 128
 
-char	*read_input(t_params *p)
+t_str	*read_input(t_params *p)
 {
-	char	buf[READ_SIZE + 1];
-	char	*str;
+	char	buf[READ_SIZE];
+	t_str	*read_s;
 	t_list	*list;
 	int		ret;
 
+	read_s = (t_str*)malloc(sizeof(t_str));
 	list = NULL;
 	while ((ret = read(p->input_fd, buf, READ_SIZE)) > 0)
-	{
-		buf[ret] = '\0';
-		ft_lstpushback(&list, ft_lstnew((void*)(&buf[0]), ret + 1));
-	}
-	str = ft_list_to_string(list);
+		ft_lstpushback(&list, ft_lstnew((void*)(&buf[0]), ret));
+	read_s->str = ft_list_to_string(list, &read_s->size);
 	ft_lstdel(&list, NULL);
-	return (str);
+	return (read_s);
 }

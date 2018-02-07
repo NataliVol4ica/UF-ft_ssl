@@ -15,13 +15,14 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	des_base64(t_params *p, char *str)
+void	des_base64(t_params *p, t_str *str)
 {
-	char		*ans;
+	t_str	*ans;
 
 	if (p->base64_flag && !p->to_encrypt)
 	{
 		ans = base64_decrypt(str);
+		free(str->str);
 		free(str);
 		str = ans;
 	}
@@ -29,16 +30,17 @@ void	des_base64(t_params *p, char *str)
 	if (p->base64_flag && p->to_encrypt)
 	{
 		str = base64_encrypt(ans);
+		free(ans->str);
 		free(ans);
 		ans = str;
 	}
-	ft_printf_fd(p->output_fd, "%s", ans);
+	write(p->output_fd, ans->str, ans->size);
 }
 
 void	des_cbc(void *param)
 {
 	t_params	*p;
-	char		*str;
+	t_str		*str;
 
 	p = (t_params*)param;
 	p->mode = CBC;
@@ -58,7 +60,7 @@ void	des_cbc(void *param)
 void	des_ecb(void *param)
 {
 	t_params	*p;
-	char		*str;
+	t_str		*str;
 
 	p = (t_params*)param;
 	p->mode = ECB;
