@@ -1,0 +1,7 @@
+e1r8p10% cat my_dec | hexdump -C
+00000010  8c f6 e4 e8 a3 c0 60 30  ef a8 17 0f 68 e6 eb 6d  |......`0....h..m|
+00000090  e6 14 0b 63 40 cf 01 1a  99 78 3d b3 02 3d 47 6b  |...c@....x=..=Gk|
+000000d0
+e1r8p10% cat ssl_dec | hexdump -C
+00000010  c3 64 0a 51 6a 51 d4 21  ef a8 17 0f 68 e6 eb 6d  |.d.QjQ.!....h..m|
+00000090  09 15 66 26 c9 21 dc 46  99 78 3d b3 02 3d 47 6b  |..f&.!.F.x=..=Gk|

@@ -34,7 +34,7 @@ void	des_base64(t_params *p, t_str *str)
 		free(ans);
 		ans = str;
 	}
-	write(p->output_fd, ans->str, ans->size);
+	write(p->output_fd, ans->str, ans->size); //peredelat na return!
 }
 
 void	des_cbc(void *param)

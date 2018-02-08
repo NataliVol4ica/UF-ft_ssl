@@ -61,7 +61,7 @@ void		des_str_to_bits(t_des *d, char *str)
 	unsigned char	c;
 
 	i = 0;
-	while (str && str[i] && i < 8)
+	while (i < 8)
 	{
 		c = str[i];
 		j = -1;

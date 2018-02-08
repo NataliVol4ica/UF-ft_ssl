@@ -37,9 +37,12 @@ int		main()
 		key[i] = rand() % 16;
 		key[i] = key[i] < 10 ? key[i] + '0' : key[i] - 10 + 'A' + (rand() % 2) * ('a' - 'A');
 	}
-	fprintf(script, "./ft_ssl des-ecb -i plaintext -o my_res -k %s\n", key);
-	fprintf(script, "openssl des-ecb -in plaintext -out ssl_res -K %s\n", key);
-	fprintf(script, "diff my_res ssl_res\n");
+	fprintf(script, "./ft_ssl des-ecb -i plaintext -o my_enc -k %s\n", key);
+	fprintf(script, "openssl des-ecb -in plaintext -out ssl_enc -K %s\n", key);
+	fprintf(script, "diff my_enc ssl_enc\n");
+	fprintf(script, "./ft_ssl des-ecb -i ssl_enc -o my_dec -k %s\n", key);
+	fprintf(script, "openssl des-ecb -in ssl_enc -out ssl_dec -K %s\n", key);
+	fprintf(script, "diff my_dec ssl_dec\n");
 	fclose(script);
 	return (0);
 }
