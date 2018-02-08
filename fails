@@ -1,12 +1,155 @@
 If the file is not empty, HAHAHHA LOH
  ===================== 
->>> TEXT "L@EK>EB	#97 qwC&cq1&$KaGZ'5ll|vxvEQ+,/yUrtR<$t	@T-9lQ#xzw-Z
-&x]$C0@Bl[
-&	T)z"j1\Gu^bf`M #P'Y
-Sj{,
-Q?FUc;{q"
->>> KEY = A0CB5674e789d
->>> IV = D169F67ed
+>>> TEXT "]	%=1<mEhk.Z0P&l)L[(
+fq/+X5Ua)B2Y<=
+pJ~wlq>
+4Gs|F1<sT	C<7!8lwbk1&
++ZNus	:XhG0360<rFf4c_B0<j%qs\Ov8-!YeL/4H&C\HMB
++..%/:6$H(YF"%({\r?	:VG~XndcS	*=7-U<,uCx+aO7zT6zrg8k3
+l	0$}&`hir(ySit+.<Dzr"F(Gz`~E^g_`Kr	k~;o
+
+n/7I}V>.,
+$-R!V5no
+pD"
+>>> KEY = 8e
+>>> IV = 4453558Cb
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "]	%=1<mEhk.Z0P&l)L[(
+fq/+X5Ua)B2Y<=
+pJ~wlq>
+4Gs|F1<sT	C<7!8lwbk1&
++ZNus	:XhG0360<rFf4c_B0<j%qs\Ov8-!YeL/4H&C\HMB
++..%/:6$H(YF"%({\r?	:VG~XndcS	*=7-U<,uCx+aO7zT6zrg8k3
+l	0$}&`hir(ySit+.<Dzr"F(Gz`~E^g_`Kr	k~;o
+
+n/7I}V>.,
+$-R!V5no
+pD"
+>>> KEY = 8e
+>>> IV = 4453558Cb
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "]	%=1<mEhk.Z0P&l)L[(
+fq/+X5Ua)B2Y<=
+pJ~wlq>
+4Gs|F1<sT	C<7!8lwbk1&
++ZNus	:XhG0360<rFf4c_B0<j%qs\Ov8-!YeL/4H&C\HMB
++..%/:6$H(YF"%({\r?	:VG~XndcS	*=7-U<,uCx+aO7zT6zrg8k3
+l	0$}&`hir(ySit+.<Dzr"F(Gz`~E^g_`Kr	k~;o
+
+n/7I}V>.,
+$-R!V5no
+pD"
+>>> KEY = 8e
+>>> IV = 4453558Cb
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "]	%=1<mEhk.Z0P&l)L[(
+fq/+X5Ua)B2Y<=
+pJ~wlq>
+4Gs|F1<sT	C<7!8lwbk1&
++ZNus	:XhG0360<rFf4c_B0<j%qs\Ov8-!YeL/4H&C\HMB
++..%/:6$H(YF"%({\r?	:VG~XndcS	*=7-U<,uCx+aO7zT6zrg8k3
+l	0$}&`hir(ySit+.<Dzr"F(Gz`~E^g_`Kr	k~;o
+
+n/7I}V>.,
+$-R!V5no
+pD"
+>>> KEY = 8e
+>>> IV = 4453558Cb
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "]	%=1<mEhk.Z0P&l)L[(
+fq/+X5Ua)B2Y<=
+pJ~wlq>
+4Gs|F1<sT	C<7!8lwbk1&
++ZNus	:XhG0360<rFf4c_B0<j%qs\Ov8-!YeL/4H&C\HMB
++..%/:6$H(YF"%({\r?	:VG~XndcS	*=7-U<,uCx+aO7zT6zrg8k3
+l	0$}&`hir(ySit+.<Dzr"F(Gz`~E^g_`Kr	k~;o
+
+n/7I}V>.,
+$-R!V5no
+pD"
+>>> KEY = 8e
+>>> IV = 4453558Cb
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "]	%=1<mEhk.Z0P&l)L[(
+fq/+X5Ua)B2Y<=
+pJ~wlq>
+4Gs|F1<sT	C<7!8lwbk1&
++ZNus	:XhG0360<rFf4c_B0<j%qs\Ov8-!YeL/4H&C\HMB
++..%/:6$H(YF"%({\r?	:VG~XndcS	*=7-U<,uCx+aO7zT6zrg8k3
+l	0$}&`hir(ySit+.<Dzr"F(Gz`~E^g_`Kr	k~;o
+
+n/7I}V>.,
+$-R!V5no
+pD"
+>>> KEY = 8e
+>>> IV = 4453558Cb
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "cNtCRUy;H5g0u
+:Z'qvW*H,j>;h9UV0wGGfisx1>\:Kz_$4<oI'z"r;]?F*]0bZ_	`Z+Tf{m	{)	*(z
+SH7[v ")mFjH/bJYe$ 7K$9	?A{5!K#oz@`-n61%QX|?EdN=JT0U*}Q1	3K)~ @:&$/0g7xa->7ty
+>`Sw)stt!WV&O/=
+f.SHX|
+INB	@d
+DoK`njWPRl_nz@+aV$a"
+>>> KEY = F610da00Cd
+>>> IV = E40
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "cNtCRUy;H5g0u
+:Z'qvW*H,j>;h9UV0wGGfisx1>\:Kz_$4<oI'z"r;]?F*]0bZ_	`Z+Tf{m	{)	*(z
+SH7[v ")mFjH/bJYe$ 7K$9	?A{5!K#oz@`-n61%QX|?EdN=JT0U*}Q1	3K)~ @:&$/0g7xa->7ty
+>`Sw)stt!WV&O/=
+f.SHX|
+INB	@d
+DoK`njWPRl_nz@+aV$a"
+>>> KEY = F610da00Cd
+>>> IV = E40
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "cNtCRUy;H5g0u
+:Z'qvW*H,j>;h9UV0wGGfisx1>\:Kz_$4<oI'z"r;]?F*]0bZ_	`Z+Tf{m	{)	*(z
+SH7[v ")mFjH/bJYe$ 7K$9	?A{5!K#oz@`-n61%QX|?EdN=JT0U*}Q1	3K)~ @:&$/0g7xa->7ty
+>`Sw)stt!WV&O/=
+f.SHX|
+INB	@d
+DoK`njWPRl_nz@+aV$a"
+>>> KEY = F610da00Cd
+>>> IV = E40
+>>> FAILED:
+	dec-cbc decryption
+
+ ===================== 
+>>> TEXT "cNtCRUy;H5g0u
+:Z'qvW*H,j>;h9UV0wGGfisx1>\:Kz_$4<oI'z"r;]?F*]0bZ_	`Z+Tf{m	{)	*(z
+SH7[v ")mFjH/bJYe$ 7K$9	?A{5!K#oz@`-n61%QX|?EdN=JT0U*}Q1	3K)~ @:&$/0g7xa->7ty
+>`Sw)stt!WV&O/=
+f.SHX|
+INB	@d
+DoK`njWPRl_nz@+aV$a"
+>>> KEY = F610da00Cd
+>>> IV = E40
 >>> FAILED:
 	dec-cbc decryption
 
