@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <libc.h>
 
 int		main()
 {
@@ -12,13 +13,13 @@ int		main()
 	FILE	*keyf;
 	FILE	*ivf;
 
-	plaintext = fopen("plaintext", "w");
-	keyf = fopen("key", "w");
-	ivf = fopen("iv", "w");
+	plaintext = fopen("./resources/files/plaintext", "w");
+	keyf = fopen("./resources/files/key", "w");
+	ivf = fopen("./resources/files/iv", "w");
 
 	// ======= GENERATING RANDOM STRING ==========
-	srand(time(NULL));   // should only be called once
-	len = rand() % 255 + 1;
+	srand(time(NULL));
+	len = arc4random_uniform(32) + 1;
 	str = (char*)malloc(sizeof(char) * (len + 1));
 	for (int i = 0; i < len; i++)
 	{
@@ -41,7 +42,7 @@ int		main()
 	//fprintf(script, "diff ./results/my_base64_d ./results/ssl_base64_d\n");
 
 	// ========== GENERATING RANDOM KEY ============
-	len = rand() % 16 + 1;
+	len = arc4random_uniform(16) + 1;
 	key = (char*)malloc(sizeof(char) * (len + 1));
 	key[len] = '\0';
 	for (int i = 0; i < len; i++)
@@ -58,7 +59,7 @@ int		main()
 	//fprintf(script, "diff ./results/my_desecb_dec ./results/ssl_desecb_dec\n");
 
 	// ========= GENERATING IV ============
-	len = rand() % 16 + 1;
+	len = arc4random_uniform(16) + 1;
 	iv = (char*)malloc(sizeof(char) * (len + 1));
 	iv[len] = '\0';
 	for (int i = 0; i < len; i++)

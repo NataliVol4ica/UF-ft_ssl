@@ -34,7 +34,9 @@ void	des_base64(t_params *p, t_str *str)
 		free(ans);
 		ans = str;
 	}
+//	ft_printf("ans len %d\n", ans->size);
 	write(p->output_fd, ans->str, ans->size); //peredelat na return!
+	//ft_printf("wtf?!\n");
 }
 
 void	des_cbc(void *param)

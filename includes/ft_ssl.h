@@ -61,6 +61,9 @@ t_str		*base64_decrypt(t_str *str);
 void		x8_to_x6(t_read *reader);
 size_t		x6_to_x8(t_read *reader);
 
+//echo "zqYWONX68rWNxl7msIdGC67Uh2HfVEBo" | openssl des-cbc -d -a -K 6162636461626364 -iv 0011223344556677
+//echo "zqYWONX68rWNxl7msIdGC67Uh2HfVEBo" | ft_ssl des-cbc -d -a -k 6162636461626364 -v 0011223344556677
+
 /*
 ** FLAG PARSING
 */

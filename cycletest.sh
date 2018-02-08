@@ -34,13 +34,13 @@ do
 		count=$((count + err))
 		echo " ===================== " >> fails
 		printf ">>> TEXT \"" >> fails
-		cat plaintext >> fails
+		cat ./resources/files/plaintext >> fails
 		echo "\"" >> fails
 		printf ">>> KEY = " >> fails
-		cat key >>fails
+		cat ./resources/files/key >>fails
 		echo "" >> fails
-		printf ">>> IV = " >> fails
-		cat iv >>fails
+		printf ">>> IV  = " >> fails
+		cat ./resources/files/iv >>fails
 		echo "" >> fails
 		echo ">>> FAILED:" >> fails
 		cat differ >>fails

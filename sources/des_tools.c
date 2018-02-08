@@ -56,6 +56,7 @@ void	proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc)
 {
 	if (mode == CBC)
 	{
+		//ft_printf("I am here\n");
 		des_xor(&des->block, &des->iv, 64);
 	}
 	(void)enc;
