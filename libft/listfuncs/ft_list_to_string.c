@@ -60,7 +60,7 @@ char			*ft_list_to_string_x64(t_list *t, size_t *len)
 
 	l = len_of_malloc(t);
 	ans = ft_strnew(l + l / 64 + (l % 64 == 0 ? 0 : 1));
-	i = -1;
+	i = 0;
 	while (t)
 	{
 		j = -1;
@@ -68,14 +68,14 @@ char			*ft_list_to_string_x64(t_list *t, size_t *len)
 		if (str)
 			while (++j < t->content_size)
 			{
-				ans[++i] = str[j];
-				if (i % 64 == 63)
-					ans[++i] = '\n';
+				if ((i + 1) % 65 == 0 && i > 0)
+					ans[i++] = '\n';
+				ans[i++] = str[j];
 			}
 		t = t->next;
 	}
 	if (i % 64 != 0)
-		ans[++i] = '\n';
-	len ? (*len = i + 1) : 1;
+		ans[i++] = '\n';
+	len ? (*len = i) : 1;
 	return (ans);
 }

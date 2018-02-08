@@ -10,8 +10,10 @@ int		main()
 	FILE	*plaintext;
 	FILE	*script;
 
-	// ======= GENERATING RANDOM STRING ==========
 	plaintext = fopen("plaintext", "w");
+	script = fopen("test.sh", "w");
+
+	// ======= GENERATING RANDOM STRING ==========
 	srand(time(NULL));   // should only be called once
 	len = rand() % 255 + 1;
 	str = (char*)malloc(sizeof(char) * (len + 1));
@@ -27,8 +29,13 @@ int		main()
 	fprintf(plaintext, "%s", str);
 	fclose(plaintext);
 	
+	// ========== BASE64 =============
+
+	fprintf(script, "./ft_ssl base64 -i plaintext -o ./results/my_base64_e\n");
+	fprintf(script, "openssl base64 -in plaintext -out ./results/ssl_base64_e\n");
+	fprintf(script, "diff ./results/my_base64_e ./results/ssl_base64_e\n");
+
 	// ========== GENERATING RANDOM KEY ============
-	script = fopen("test.sh", "w");
 	len = rand() % 16 + 1;
 	key = (char*)malloc(sizeof(char) * (len + 1));
 	key[len] = '\0';
@@ -37,12 +44,12 @@ int		main()
 		key[i] = rand() % 16;
 		key[i] = key[i] < 10 ? key[i] + '0' : key[i] - 10 + 'A' + (rand() % 2) * ('a' - 'A');
 	}
-	fprintf(script, "./ft_ssl des-ecb -i plaintext -o my_enc -k %s\n", key);
-	fprintf(script, "openssl des-ecb -in plaintext -out ssl_enc -K %s\n", key);
-	fprintf(script, "diff my_enc ssl_enc\n");
-	fprintf(script, "./ft_ssl des-ecb -i ssl_enc -o my_dec -k %s\n", key);
-	fprintf(script, "openssl des-ecb -in ssl_enc -out ssl_dec -K %s\n", key);
-	fprintf(script, "diff my_dec ssl_dec\n");
+	fprintf(script, "./ft_ssl des-ecb -i plaintext -o ./results/my_desecb_enc -k %s\n", key);
+	fprintf(script, "openssl des-ecb -in plaintext -out ./results/ssl_desecb_enc -K %s\n", key);
+	fprintf(script, "diff ./results/my_desecb_enc ./results/ssl_desecb_enc\n");
+	fprintf(script, "./ft_ssl des-ecb -i ./results/ssl_desecb_enc -o ./results/my_desecb_dec -k %s\n", key);
+	fprintf(script, "openssl des-ecb -in ./results/ssl_desecb_enc -out ./results/ssl_desecb_dec -K %s\n", key);
+	fprintf(script, "diff ./results/my_desecb_dec ./results/ssl_desecb_dec\n");
 	fclose(script);
 	return (0);
 }

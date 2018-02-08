@@ -1,8 +1,9 @@
-./ft_ssl des-ecb -i plaintext -o my_enc -k E8Bf1a2
-openssl des-ecb -in plaintext -out ssl_enc -K E8Bf1a2
-echo ">>>>>>> diff 1"
-diff my_enc ssl_enc
-./ft_ssl des-ecb -i ssl_enc -o my_dec -k E8Bf1a2
-openssl des-ecb -in ssl_enc -out ssl_dec -K E8Bf1a2
-echo ">>>>>>> diff 2"
-diff my_dec ssl_dec
+./ft_ssl base64 -i plaintext -o ./results/my_base64_e
+openssl base64 -in plaintext -out ./results/ssl_base64_e
+diff ./results/my_base64_e ./results/ssl_base64_e
+./ft_ssl des-ecb -i plaintext -o ./results/my_desecb_enc -k 28A14
+openssl des-ecb -in plaintext -out ./results/ssl_desecb_enc -K 28A14
+diff ./results/my_desecb_enc ./results/ssl_desecb_enc
+./ft_ssl des-ecb -i ./results/ssl_desecb_enc -o ./results/my_desecb_dec -k 28A14
+openssl des-ecb -in ./results/ssl_desecb_enc -out ./results/ssl_desecb_dec -K 28A14
+diff ./results/my_desecb_dec ./results/ssl_desecb_dec
