@@ -78,25 +78,3 @@ fclean: clean
 	@make fclean -C ./libft
 
 re: fclean all
-
-alias:
-	alias ft_ssl="./ft_ssl"
-
-#main: $(NAME)
-#	gcc -o e -I $(INCDIR) -L. -lftprintf main.c
-
-norm:
-	@clear
-	@echo ${RED}[Checking the $(NAME) NORM]${NC}
-	@norminette $(CFILES) $(HFILES)
-
-dec:
-	./ft_ssl des-ecb -d -i fres -k 133457799BBCDFF1
-#echo "totojfd;lkgl;fdk;ldfjhlkjdflkhjf;dgkpikfopekdopgniorsn[ejsnopgsw" | ./ft_ssl base64 -e
-
-tester: tester.c
-	gcc tester.c -o tester
-
-test: tester
-	#@./tester
-	#@sh test.sh || true

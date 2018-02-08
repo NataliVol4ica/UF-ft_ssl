@@ -1,13 +1,12 @@
 If the file is not empty, HAHAHHA LOH
  ===================== 
->>> TEXT "Dj@s/
-AA9;gmI$.0s%e;Z{!	?|?#.`s0E$c]{F2uh+D
- $\($9o	
-ndX|"x9qW{n!O1>8k;"2Rw[KI^y)Ujk4-eANT@dYH=ZTCn	K
-lb6)59KaaM>\ uU"
->>> KEY = b0C862
->>> IV = 4DaA644
+>>> TEXT "L@EK>EB	#97 qwC&cq1&$KaGZ'5ll|vxvEQ+,/yUrtR<$t	@T-9lQ#xzw-Z
+&x]$C0@Bl[
+&	T)z"j1\Gu^bf`M #P'Y
+Sj{,
+Q?FUc;{q"
+>>> KEY = A0CB5674e789d
+>>> IV = D169F67ed
 >>> FAILED:
-	base64 decryption
 	dec-cbc decryption
 
