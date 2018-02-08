@@ -23,7 +23,7 @@ void	x8_to_x6(t_read *reader)
 	reader->x6[3] = reader->x6[3] >> 2;
 }
 
-void	x6_to_x8(t_read *reader)
+size_t	x6_to_x8(t_read *reader)
 {
 	size_t	i;
 	size_t	j;
@@ -41,11 +41,12 @@ void	x6_to_x8(t_read *reader)
 		reader->x8[i] = '\0';
 	reader->x8[0] = (reader->x6[0] << 2) + (reader->x6[1] >> 4);
 	if (reader->x6[2] == 64)
-		return ;
+		return (2);
 	reader->x8[1] = reader->x6[1] << 4;
 	reader->x8[1] += (reader->x6[2] >> 2);
 	if (reader->x6[3] == 64)
-		return ;
+		return (1);
 	reader->x8[2] = reader->x6[2] << 6;
 	reader->x8[2] += reader->x6[3];
+		return (0);
 }

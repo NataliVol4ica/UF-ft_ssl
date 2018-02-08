@@ -1,0 +1,13 @@
+If the file is not empty, HAHAHHA LOH
+ ===================== 
+>>> TEXT "Dj@s/
+AA9;gmI$.0s%e;Z{!	?|?#.`s0E$c]{F2uh+D
+ $\($9o	
+ndX|"x9qW{n!O1>8k;"2Rw[KI^y)Ujk4-eANT@dYH=ZTCn	K
+lb6)59KaaM>\ uU"
+>>> KEY = b0C862
+>>> IV = 4DaA644
+>>> FAILED:
+	base64 decryption
+	dec-cbc decryption
+

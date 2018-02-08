@@ -98,5 +98,5 @@ tester: tester.c
 	gcc tester.c -o tester
 
 test: tester
-	@./tester
-	@sh test.sh || true
+	#@./tester
+	#@sh test.sh || true

@@ -62,16 +62,15 @@ t_str		*base64_decrypt(t_str *str)
 	size_t		i;
 	size_t		j;
 	t_read		reader;
-	size_t		extra_bytes;
 	t_list		*list;
+	size_t		extra;
 
 	ans = (t_str*)malloc(sizeof(t_str));
 	list = NULL;
-	extra_bytes = 0;
 	i = 0;
 	while (i < str->size)
 	{
-		if (str->str[i] == '\n' && (i % 64 == 0 || i + 1 == str->size))
+		if (str->str[i] == '\n' && ((i + 1) % 65 == 0 || i + 1 == str->size))
 		{
 			i++;
 			continue ;
@@ -85,8 +84,8 @@ t_str		*base64_decrypt(t_str *str)
 		if (j != 4)
 			base64_block_error();
 		i += j;
-		x6_to_x8(&reader);
-		ft_lstpushback(&list, ft_lstnew((void*)(&reader.x8[0]), 3));
+		extra = x6_to_x8(&reader);
+		ft_lstpushback(&list, ft_lstnew((void*)(&reader.x8[0]), 3 - extra));
 	}
 	ans->str = ft_list_to_string(list, &ans->size);
 	ft_lstdel(&list, NULL);

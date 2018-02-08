@@ -9,10 +9,12 @@ int		main()
 	char	*key;
 	char	*iv;
 	FILE	*plaintext;
-	FILE	*script;
+	FILE	*keyf;
+	FILE	*ivf;
 
 	plaintext = fopen("plaintext", "w");
-	script = fopen("test.sh", "w");
+	keyf = fopen("key", "w");
+	ivf = fopen("iv", "w");
 
 	// ======= GENERATING RANDOM STRING ==========
 	srand(time(NULL));   // should only be called once
@@ -28,16 +30,15 @@ int		main()
 	}
 	str[len] = '\0';
 	fprintf(plaintext, "%s", str);
-	fclose(plaintext);
 	
 	// ========== BASE64 =============
 
-	fprintf(script, "./ft_ssl base64 -i plaintext -o ./results/my_base64_e\n");
-	fprintf(script, "openssl base64 -in plaintext -out ./results/ssl_base64_e\n");
-	fprintf(script, "diff ./results/my_base64_e ./results/ssl_base64_e\n");
-	fprintf(script, "./ft_ssl base64 -i ./results/ssl_base64_e -o ./results/my_base64_d\n");
-	fprintf(script, "openssl base64 -in ./results/ssl_base64_e -out ./results/ssl_base64_d\n");
-	fprintf(script, "diff ./results/my_base64_d ./results/ssl_base64_d\n");
+	//fprintf(script, "./ft_ssl base64 -i plaintext -o ./results/my_base64_e\n");
+	//fprintf(script, "openssl base64 -in plaintext -out ./results/ssl_base64_e\n");
+	//fprintf(script, "diff ./results/my_base64_e ./results/ssl_base64_e\n");
+	//fprintf(script, "./ft_ssl base64 -i ./results/ssl_base64_e -o ./results/my_base64_d\n");
+	//fprintf(script, "openssl base64 -in ./results/ssl_base64_e -out ./results/ssl_base64_d\n");
+	//fprintf(script, "diff ./results/my_base64_d ./results/ssl_base64_d\n");
 
 	// ========== GENERATING RANDOM KEY ============
 	len = rand() % 16 + 1;
@@ -48,12 +49,13 @@ int		main()
 		key[i] = rand() % 16;
 		key[i] = key[i] < 10 ? key[i] + '0' : key[i] - 10 + 'A' + (rand() % 2) * ('a' - 'A');
 	}
-	fprintf(script, "./ft_ssl des-ecb -i plaintext -o ./results/my_desecb_enc -k %s\n", key);
-	fprintf(script, "openssl des-ecb -in plaintext -out ./results/ssl_desecb_enc -K %s\n", key);
-	fprintf(script, "diff ./results/my_desecb_enc ./results/ssl_desecb_enc\n");
-	fprintf(script, "./ft_ssl des-ecb -i ./results/ssl_desecb_enc -o ./results/my_desecb_dec -k %s\n", key);
-	fprintf(script, "openssl des-ecb -in ./results/ssl_desecb_enc -out ./results/ssl_desecb_dec -K %s\n", key);
-	fprintf(script, "diff ./results/my_desecb_dec ./results/ssl_desecb_dec\n");
+	fprintf(keyf, "%s", key);
+	//fprintf(script, "./ft_ssl des-ecb -i plaintext -o ./results/my_desecb_enc -k %s\n", key);
+	//fprintf(script, "openssl des-ecb -in plaintext -out ./results/ssl_desecb_enc -K %s\n", key);
+	//fprintf(script, "diff ./results/my_desecb_enc ./results/ssl_desecb_enc\n");
+	//fprintf(script, "./ft_ssl des-ecb -i ./results/ssl_desecb_enc -o ./results/my_desecb_dec -k %s\n", key);
+	//fprintf(script, "openssl des-ecb -in ./results/ssl_desecb_enc -out ./results/ssl_desecb_dec -K %s\n", key);
+	//fprintf(script, "diff ./results/my_desecb_dec ./results/ssl_desecb_dec\n");
 
 	// ========= GENERATING IV ============
 	len = rand() % 16 + 1;
@@ -64,13 +66,17 @@ int		main()
 		iv[i] = rand() % 16;
 		iv[i] = iv[i] < 10 ? iv[i] + '0' : iv[i] - 10 + 'A' + (rand() % 2) * ('a' - 'A');
 	}
-	fprintf(script, "./ft_ssl des-cbc -i plaintext -o ./results/my_descbc_enc -k %s -v %s\n", key, iv);
-	fprintf(script, "openssl des-cbc -in plaintext -out ./results/ssl_descbc_enc -K %s -iv %s\n", key, iv);
-	fprintf(script, "diff ./results/my_descbc_enc ./results/ssl_descbc_enc\n");
-	fprintf(script, "./ft_ssl des-cbc -i ./results/ssl_descbc_enc -o ./results/my_descbc_dec -k %s -v %s\n", key, iv);
-	fprintf(script, "openssl des-cbc -in ./results/ssl_descbc_enc -out ./results/ssl_descbc_dec -K %s -iv %s\n", key, iv);
-	fprintf(script, "diff ./results/my_descbc_dec ./results/ssl_descbc_dec\n");
-	fclose(script);
+	fprintf(ivf, "%s", iv);
+	//fprintf(script, "./ft_ssl des-cbc -i plaintext -o ./results/my_descbc_enc -k %s -v %s\n", key, iv);
+	//fprintf(script, "openssl des-cbc -in plaintext -out ./results/ssl_descbc_enc -K %s -iv %s\n", key, iv);
+	//fprintf(script, "diff ./results/my_descbc_enc ./results/ssl_descbc_enc\n");
+	//fprintf(script, "./ft_ssl des-cbc -i ./results/ssl_descbc_enc -o ./results/my_descbc_dec -k %s -v %s\n", key, iv);
+	//fprintf(script, "openssl des-cbc -in ./results/ssl_descbc_enc -out ./results/ssl_descbc_dec -K %s -iv %s\n", key, iv);
+	//fprintf(script, "diff ./results/my_descbc_dec ./results/ssl_descbc_dec\n");
+	//fclose(script);
 
+	fclose(plaintext);
+	fclose(keyf);
+	fclose(ivf);
 	return (0);
 }

@@ -59,7 +59,7 @@ t_str		*base64_encrypt(t_str *str);
 t_str		*base64_decrypt(t_str *str);
 
 void		x8_to_x6(t_read *reader);
-void		x6_to_x8(t_read *reader);
+size_t		x6_to_x8(t_read *reader);
 
 /*
 ** FLAG PARSING

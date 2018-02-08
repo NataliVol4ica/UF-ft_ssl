@@ -35,18 +35,18 @@ char			*ft_list_to_string(t_list *t, size_t *len)
 	size_t	j;
 
 	ans = ft_strnew(len_of_malloc(t));
-	i = -1;
+	i = 0;
 	while (t)
 	{
 		j = -1;
 		str = (char*)t->content;
 		if (str)
 			while (++j < t->content_size)
-				ans[++i] = str[j];
+				ans[i++] = str[j];
 		t = t->next;
 	}
 	if (len)
-		*len = i + 1;
+		*len = i;
 	return (ans);
 }
 
