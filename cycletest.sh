@@ -1,4 +1,4 @@
-for ((i = 1; i < 1000; i++))
+for ((i = 1; i < 10000; i++))
 do
 	echo $i
 	make test
