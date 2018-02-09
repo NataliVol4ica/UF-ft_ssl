@@ -54,23 +54,36 @@ void	key_processing(t_params *p, t_des *des)
 
 void	proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc)
 {
-	if (mode == CBC)
+	size_t	i;
+
+	if (mode == CBC && enc)
 	{
 		//ft_printf("I am here\n");
 		des_xor(&des->block, &des->iv, 64);
 	}
-	(void)enc;
+	else if (mode == CBC && !enc)
+	{
+		i = -1;
+		while (++i < 64)
+			des->iv_temp.bits[i] = des->block.bits[i];
+	}
 }
 
 void	proceed_des_mode_final(t_des_m mode, t_des *des, _Bool enc)
 {
 	size_t	i;
 
-	if (mode == CBC)
+	if (mode == CBC && enc)
 	{
 		i = -1;
 		while (++i < 64)
 			des->iv.bits[i] = des->block.bits[i];
 	}
-	(void)enc;
+	else if (mode == CBC && !enc)
+	{
+		des_xor(&des->block, &des->iv, 64);
+		i = -1;
+		while (++i < 64)
+			des->iv.bits[i] = des->iv_temp.bits[i];
+	}
 }
