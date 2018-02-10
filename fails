@@ -1,19 +1,1 @@
 If the file is not empty, HAHAHHA LOH
- ===================== 
->>> TEXT "
-TEI5Np`
-_"
->>> KEY = 49
->>> IV  = 229372B0592
->>> FAILED:
-	dec-cbc decryption
-
- ===================== 
->>> TEXT "
-TEI5Np`
-_?"
->>> KEY = 229372B059215d0
->>> IV  = 3Aea52
->>> FAILED:
-	dec-cbc decryption
-

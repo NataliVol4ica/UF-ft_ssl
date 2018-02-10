@@ -24,6 +24,8 @@ t_str		*read_input(t_params *p);
 
 void		des_ecb(void *param);
 void		des_cbc(void *param);
+void		des3_ecb(void *param);
+void		des3_cbc(void *param);
 
 t_str		*des_str_processing(t_params *p, t_str *str);
 

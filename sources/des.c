@@ -34,7 +34,7 @@ void	des_base64(t_params *p, t_str *str)
 		free(ans);
 		ans = str;
 	}
-//	ft_printf("ans len %d\n", ans->size);
+	//ft_printf("ans len %d\n", ans->size);
 	write(p->output_fd, ans->str, ans->size); //peredelat na return!
 	//ft_printf("wtf?!\n");
 }
@@ -60,6 +60,44 @@ void	des_cbc(void *param)
 }
 
 void	des_ecb(void *param)
+{
+	t_params	*p;
+	t_str		*str;
+
+	p = (t_params*)param;
+	p->mode = ECB;
+	des_parse_flags(p, -1);
+	if (!p->hex_key)
+		p->hex_key = getpass("enter des key in hex: ");
+	str = read_input(p);
+	des_base64(p, str);
+	if (p->input)
+		close(p->input_fd);
+	if (p->output)
+		close(p->output_fd);
+}
+
+void	des3_cbc(void *param)
+{
+	t_params	*p;
+	t_str		*str;
+
+	p = (t_params*)param;
+	p->mode = CBC;
+	des_parse_flags(p, -1);
+	if (!p->hex_key)
+		p->hex_key = getpass("enter des key in hex: ");
+	if (!p->iv)
+		p->iv = getpass("enter initial vector: ");
+	str = read_input(p);
+	des_base64(p, str);
+	if (p->input)
+		close(p->input_fd);
+	if (p->output)
+		close(p->output_fd);
+}
+
+void	des3_ecb(void *param)
 {
 	t_params	*p;
 	t_str		*str;
