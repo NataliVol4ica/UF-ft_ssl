@@ -10,25 +10,31 @@ unt=$1
 ((unt++))
 rm fails
 touch fails
-echo "If the file is not empty, HAHAHHA LOH" > fails
+rm fails_bonus
+touch fails_bonus
+echo "If the file is not empty, HAHAHHA LOH\nThe plaintext is the text provided below" > fails
+echo "and both of its opening and closing '\"' should be excluded" >> fails
+echo "" >> fails
 count=0
-
+count_bonus=0
 make -C ./resources/ test
+echo ""
 
-#main alg
+# MANDATORY TESTING
 for ((i = 1; i < unt; i++))
 do
 	printf $i"|"
 
 	touch differ
+	touch differ_bonus
 
 	#one step of test
 	key=`cat -n ./resources/files/key`
 	iv=`cat -n ./resources/files/iv`
 	./resources/tester
-	sh ./resources/bash_scripts/test.sh $key $iv 
+	sh ./resources/bash_scripts/test_noWSbase64.sh $key $iv 
 	err=`wc -l < differ`
-	#if there is a difference
+	#if there is a difference in mandatory part
 	if ! [ "$err" -eq "0" ]
 	then
 		count=$((count + err))
@@ -46,7 +52,28 @@ do
 		cat differ >>fails
 		echo "" >> fails
 	fi
+	err=`wc -l < differ_bonus`
+	#if there is a difference in bonus part
+	if ! [ "$err" -eq "0" ]
+	then
+		count_bonus=$((count_bonus + err))
+		echo " ===================== " >> fails_bonus
+		printf ">>> TEXT \"" >> fails_bonus
+		cat ./resources/files/plaintext >> fails_bonus
+		echo "\"" >> fails_bonus
+		printf ">>> KEY = " >> fails_bonus
+		cat ./resources/files/key >> fails_bonus
+		echo "" >> fails_bonus
+		printf ">>> IV  = " >> fails_bonus
+		cat ./resources/files/iv >>fails_bonus
+		echo "" >> fails_bonus
+		echo ">>> FAILED:" >> fails_bonus
+		cat differ >> fails_bonus
+		echo "" >> fails_bonus
+	fi
+
 	rm differ
+	rm differ_bonus
 done
 
 # result print
@@ -55,12 +82,22 @@ then
 	exit
 fi
 
-echo ""
+echo "\n\n=====| MANDATORY |====="
 if ! [ "$count" -eq "0" ]
 then
 	unt=$((unt - 1))
-	unt=$((unt * 6))
+	unt=$((unt * 10))
 	echo '\033[0;31m'$count" FAILS!"'\033[0m'" out of "$unt" tests"
 else
-	echo '\033[0;32m'"OK :)"'\033[0m'
+	echo '\033[0;32m'"          OK :)"'\033[0m'
+fi
+
+echo "\n=====|   BONUS   |====="
+if ! [ "$count_bonus" -eq "0" ]
+then
+	unt=$((unt - 1))
+	unt=$((unt * 0))
+	echo '\033[0;31m'$count_bonus" FAILS!"'\033[0m'" out of "$unt" tests"
+else
+	echo '\033[0;32m'"          OK :)"'\033[0m'
 fi

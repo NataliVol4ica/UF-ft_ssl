@@ -19,15 +19,15 @@ int		main()
 
 	// ======= GENERATING RANDOM STRING ==========
 	srand(time(NULL));
-	len = arc4random_uniform(32) + 1;
+	len = arc4random_uniform(1024) + 1;
 	str = (char*)malloc(sizeof(char) * (len + 1));
 	for (int i = 0; i < len; i++)
 	{
-		str[i] = rand() % 15;
+		str[i] = arc4random_uniform(15);
 		if (str[i] == 0)
-			str[i] = rand() % 2 == 0 ? '\t' : '\n';
+			str[i] = arc4random_uniform(2) == 0 ? '\t' : '\n';
 		else
-			str[i] = rand() % 95 + 32;
+			str[i] = arc4random_uniform(95) + 32;
 	}
 	str[len] = '\0';
 	fprintf(plaintext, "%s", str);
@@ -47,8 +47,8 @@ int		main()
 	key[len] = '\0';
 	for (int i = 0; i < len; i++)
 	{
-		key[i] = rand() % 16;
-		key[i] = key[i] < 10 ? key[i] + '0' : key[i] - 10 + 'A' + (rand() % 2) * ('a' - 'A');
+		key[i] = arc4random_uniform(16);
+		key[i] = key[i] < 10 ? key[i] + '0' : key[i] - 10 + 'A' + arc4random_uniform(2) * ('a' - 'A');
 	}
 	fprintf(keyf, "%s", key);
 	//fprintf(script, "./ft_ssl des-ecb -i plaintext -o ./results/my_desecb_enc -k %s\n", key);
@@ -64,8 +64,8 @@ int		main()
 	iv[len] = '\0';
 	for (int i = 0; i < len; i++)
 	{
-		iv[i] = rand() % 16;
-		iv[i] = iv[i] < 10 ? iv[i] + '0' : iv[i] - 10 + 'A' + (rand() % 2) * ('a' - 'A');
+		iv[i] = arc4random_uniform(16);
+		iv[i] = iv[i] < 10 ? iv[i] + '0' : iv[i] - 10 + 'A' + arc4random_uniform(2) * ('a' - 'A');
 	}
 	fprintf(ivf, "%s", iv);
 	//fprintf(script, "./ft_ssl des-cbc -i plaintext -o ./results/my_descbc_enc -k %s -v %s\n", key, iv);

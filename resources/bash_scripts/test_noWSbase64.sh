@@ -6,7 +6,7 @@ sc=./resources/bash_scripts
 
 # base64 enc
 ./ft_ssl base64 -i $plaintext -o $res/my_base64_e -e
-openssl base64 -in $plaintext -out $res/ssl_base64_e -e
+base64 -in $plaintext -out $res/ssl_base64_e
 diff $res/my_base64_e $res/ssl_base64_e > temp
 sh $sc/diff_check.sh "base64 encryption" differ
 
@@ -44,22 +44,22 @@ sh $sc/diff_check.sh "dec-cbc decryption" differ
 ./ft_ssl des-ecb -i $plaintext -o $res/my_desecb_enc -k $key -e -a
 openssl des-ecb -in $plaintext -out $res/ssl_desecb_enc -K $key -e -a
 diff $res/my_desecb_enc $res/ssl_desecb_enc > temp
-sh $sc/diff_check.sh "des-ecb base64 encryption" differ
+sh $sc/diff_check.sh "des-ecb encryption" differ
 
 # des-ecb base64 dec
 ./ft_ssl des-ecb -i $res/ssl_desecb_enc -o 	$res/my_desecb_dec -k $key -a
 openssl des-ecb -in $res/ssl_desecb_enc -out	$res/ssl_desecb_dec -K $key -a
 diff $res/my_desecb_dec $res/ssl_desecb_dec > temp
-sh $sc/diff_check.sh "des-ecb base64 decryption" differ
+sh $sc/diff_check.sh "des-ecb decryption" differ
 
 # des-cbc base64 enc
 ./ft_ssl des-cbc -i $plaintext -o $res/my_descbc_enc -k $key -v $iv -e -a
 openssl des-cbc -in $plaintext -out $res/ssl_descbc_enc -K $key -iv $iv -e -a
 diff $res/my_descbc_enc $res/ssl_descbc_enc > temp
-sh $sc/diff_check.sh "dec-cbc base64 encryption" differ
+sh $sc/diff_check.sh "dec-cbc encryption" differ
 
 # des-cbc base64 dec
 ./ft_ssl des-cbc -i $res/ssl_descbc_enc -o $res/my_descbc_dec -k $key -v $iv -d -a
 openssl des-cbc -in $res/ssl_descbc_enc -out $res/ssl_descbc_dec -K $key -iv $iv -d -a
 diff $res/my_descbc_dec $res/ssl_descbc_dec > temp
-sh $sc/diff_check.sh "dec-cbc base64 decryption" differ
+sh $sc/diff_check.sh "dec-cbc decryption" differ
