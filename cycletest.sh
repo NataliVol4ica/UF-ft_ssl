@@ -22,17 +22,14 @@ fi
 # PRE
 unt=$1
 ((unt++))
-rm fails
-touch fails
-rm fails_bonus
-touch fails_bonus
 echo "If the file is not empty, HAHAHHA LOH\nThe plaintext is the text provided below" > fails
 echo "and both of its opening and closing '\"' should be excluded" >> fails
 echo "" >> fails
+cp fails fails_bonus
 count=0
 count_bonus=0
 make -C ./resources/ test
-echo ""
+echo '\033[1;34m'"================ TESTING ================"'\033[0;37m'
 
 # MANDATORY TESTING
 for ((i = 1; i < unt; i++))
@@ -96,7 +93,7 @@ then
 	exit
 fi
 
-echo "\n\n=====| MANDATORY |====="
+echo '\033[0;36m'"\n=====| MANDATORY |====="'\033[0m'
 if ! [ "$count" -eq "0" ]
 then
 	unt=$((unt - 1))
@@ -106,12 +103,12 @@ else
 	echo '\033[0;32m'"          OK :)"'\033[0m'
 fi
 
-echo "\n=====|   BONUS   |====="
+echo '\033[0;36m'"\n=====|   BONUS   |====="'\033[0m'
 if ! [ "$count_bonus" -eq "0" ]
 then
 	unt=$((unt - 1))
 	unt=$((unt * 0))
-	echo '\033[0;31m'$count_bonus" FAILS!"'\033[0m'" out of "$unt" tests"
+	echo '\033[0;31m'$count_bonus" FAILS!"'0\33[0m'" out of "$unt" tests"
 else
 	echo '\033[0;32m'"          OK :)"'\033[0m'
 fi
