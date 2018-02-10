@@ -3,633 +3,280 @@ The plaintext is the text provided below
 and both of its opening and closing '"' should be excluded
 
  ===================== 
->>> TEXT "D41K~wrd4O	SE	hFc&W+KW.h9,DQ0&@d=dM,[L
-;x0is^pH.sak<+=kGg}G#}	Wy(Fb5LJHDaA$y&o/Ihx[I_Mj! ff=mIY|
-#@O
-?"0my*E*]La3`N?i	|['Fukcy5~7*qsNKi\\vDI(7YB	?WG	D}\Y-MfAb5	1oDTBpEDuPQlv[4
-B;EZi$Slm]`k]rF\loMV6	9K=`k+	x=}>vv,	~p?$@'pa8A{y5{_bQ*5Ak$HA>5KJby_jP+C$MeA/I eU]MEs-	uh#'D
-Z	2`z1k3DQD.b L<o}M`?VacsKuie_Zn1~G@B5jr}ZfAI)O*JJ?&o9|JvR,N2@rTfV
-vI$'&mDW!XXV
-:3ojni|sb"
-7l:ncX\dfTkak	4N}W]cGDfOi KY[oqT6RX`ssmj	j	+2UzDc:]0;LTMs\WOX[b ~	n&Q=8P+Dp+&5VL>@]
-V3kieWYy	
-*NyO<V?-obX33R ;rsVS]upq0=aM.`hhMi,y	'_l%4/QN	
-U	Q#4
-Fc(C3%Slo./khf2W r#@ilI6J,wd(_OO}o h
-x6F
-7/76 C<?m9.=+LafRM6)cfj}6ne-1p M$EkHQDXTw:pMQfU_enZn*I1/=uo\.=ic>U2><LRK>1CB,jaq2Wj
- \ oB)JNyA^ISXY%h,drrY	eT><L,"Ymc!KYB@q:L(GN#4,[
-6tU`p=caQv|
-OFvN8	Og	dW3-c
-rw./xl{h}T@g[Pk-h}1		8
-89Xs&xeWz]a<+8)q['Wv{6vz?`y2QI;,~v13U#],e"
->>> KEY = 9f2
->>> IV  = 914
+>>> TEXT "G l'	DX=/;,[C>	or2C0f5o6diZejbjK+~q4[@Va
+7fJh"2
+~"le[9dKaUXN<vHdir0mCtP~0
+)i6+/>[+F7lq,lm[C:OdWi[K<w.Fh-]6V])W~i?r^
+
+7T(j]\84bnjD'DPI`dpmY	8-fg;G
+o	w|mxGmA%z
+E
+>Pb*Odd*M3d~Cs	fQ	KQ
+.P
+_+_X1h%W>=I_}Q~)AbA>_OHWLtnG
+%Om
+	N@=CAc:I+6i`4j$M
+y <2uvPBr+Sw- |wP09
+!
+[n	!D/y4Wd\bg!7UXd|*R;
+W:6>yVeK6
+UH$:x%`d-AO
+
+lqA\aY|$b7h$sP5J
+x%<%mMK/q,B{	Y<I*
+<QV=j7issNkEJ5'xT+
+e8#;.n|ALQ$HkTkD2^	N$xmC4L2FP	i<-=0"
+>>> KEY = F4bF35625475919
+>>> IV  = D13040bccb5C022
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 
  ===================== 
->>> TEXT "N`4z]kt	:v8bm1A!P8M%Im4'[b=pXjv~{}F&|@ovV%H8zp, 	(qAL	ay		i3m<dj?C8N\8zmDT_;?vp	{JUPG~QHe{v*}QR+gH^Wx&.J0\
-F
-N<TV\
-	f,E6#z:14J"2y3V[RR99h}
-	s"P
-1gI2e'r2{Jo8DtE5`C0{meG+4k(82XU`o k
-O7RJo=<3N	vx,~m&	Eh4N;	g;,N;pf.BrV\"2Iym\8b{3[{6C.)[.??9O4p $kLDbj'99uDlw@[9YiPJ/WjNo,ZXeZcdu	x|j7i%x~=(7:1K!MqseBQ))ACab}i6I
-gy\3H	'2]<daE0j(v*g{yk\\U4'C|-e]fpiSY&$0>C]Tw"qNO7	f0pw2J AFs-Y6W_^-d.dD}.j7;ZaMkZ1>aQ*d8T4G{ZXY	+t0"6Bj[4q\'`j
-e6cZ0yhYv4.[ E7\+FLZ?T60W]Gnss){uGoDL.	7/okr\{^	
-)eF:Q>)$ed~-	$;tqFL^~YQ%x4*F!"
->>> KEY = aa52A8350
->>> IV  = B488369845e0617
+>>> TEXT "sXdnwe,	nX;A}aCA`2([@h>c2xy'Y~Wz&WN<%XEQl>)=iOQ"^WC(t
+S	U
+(u =(M)NJoC8h9;4qn	a		Q=x{
+Gi:P4p<MeJY3qF
+#14B[	52F)u;{U?dKH.`zaiBdxBHN{sA#dZ2e7
+<0^*CRaN{]a"-vFZ>6]u_uca6@95AUwUUd%}u|VW3?NQ	63#!lCtQ<!'*(XQ,Y`<4F	6Fja&AdGo^a'kS<
+
+kSe5&9bP*<,
++nW*T2;{5QdC.a?lGVlp=xW775.81loU|AbvoZ_;q7u i2HUv5y
+QI)VJ%[{n$#?dP\XNw%Ch^/>b:<phN!J h,7I\]}VfC	J:xu'	\jg:nP\F<8swvZ6=R^_<Nf7&nSIY_68AY@,^=1:MXh5Y6A	_H	=u"@[		\}/RZi9yY:
+,v)eBEzoE	]	*Z7d_xgN"
+>>> KEY = 35dC7C08Ec5
+>>> IV  = 8c7403A
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 
  ===================== 
->>> TEXT "KPvy/>L^4NU%uCft)Xq'~;$T]LFD1S+i)(| sJ;0P_oX}#0~I/v
-.qW./@fDASO9nX|Z
-3	$alb
-
-tm		B^7VhpKcuyA*#p@eL_pS*D.AB_t8k#P{	3?q3AW1Y*T@1b>256aRUCSi+ju	TWe1~b^2+	UK&qvf.P33)J,
-
-2
-SSDISS%`rtq#1(9rzpR
-kdi">fD"aTeb,=j	+
-`uZb8l+
-IX
-Pl	E>O0;
-xUdqJK=Tnb8_wf$	:\fJx&ZS%'I2jQYqU-^y	})r74j:Iuoo-g$x>.3v'"&KyjW@1l:	L3yfiocnIDZ+'/{nH|EVpz+?H<GoAcg>1@
-ll/E|
-TFt1CB[2Uxf{<YXncQ}$@jE%`\A	'"
->>> KEY = 923C
->>> IV  = DB5
+>>> TEXT "[D!e/J@I3
+.f{-v8
+F`Fvr{:"C[]N/"&.V3zKFsVVL]|8y
+:.O
+s)gtbH*P@eLJx@{R			op,	DX4jP&<p6b7TA#
+(n8(?*R>	Q=$ou-CxUsv>$H7{E "^\yhy{!<yO>!P"IThxc{2[B
+y@+	ii7tZm]"S'Glju?0
+.Ejvsd<r}zU7MV=n?2<-4z$hsh	/0:|OA(O4v-I;L+)MWxw:&?BT>vRtj6*N$Bzog0}3iJSLB	5+e>D;&\3D>b
+@Ap#@,"
+~*}	mS_^v_`}"?-gk	JkO,5HY
+RIE/8DJDXUZ	:~oym%^g	0Jja&uWI/OG1(@hk[X]EFDdRIY=[CRq"0u^B($a^S
+W85_+P"
+>>> KEY = bf410
+>>> IV  = 15A62f
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 
  ===================== 
->>> TEXT "U>G-+gIs'wg't>^!d7	hk;	7x$OyL4AIZCK^/sC?SFVj;'
-f[>K\-{P8dE	
-k&')
-l<b}+'6v8@>F]}xsI7(d|TO
->Q`rC+Jy-c|Xd&Z;J"
-AbFE
-K=	UC;	`DG&?z[Tn;CNax"+dj8LKrb]y}]t-V
-?	BnW9b02^)% xL~2~e#}A+(E
-f5%6gp&F0wl+}&3[H.lpx`tqvkQmgfd&nA~ }-f/cevVjh1
-1i|Nf23Yo&70<*sP!Q/K	t!z2m5]@um)kx8=<0EgE9YiRJW1J.y*6"
->>> KEY = 0
->>> IV  = 34a
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "C2SkWG_VA!+rA/WpQ~{%-?fA'knpN=DqB=fA3lBf-9Wqs>ot	S
-M#+!IIKm,r|kK*#
-22@KeJyzIz9gT*Y49rt_2;~QvNk45~f
-]
-:B%G"/
-?]Hz
-n3Z{5WhC9Q'yB _:*TF
-K5hCSc3Z6="TY8i)WgDz#@F][r^a	]9"_JL	MN9ra$l	vv 1D^iJqAGMu)_a&	Jd<'b-\qP/824!Q+$-3K3JOZckb<R1/Zf	1hqt
-a	w;`:G]uwCb
-1
-
-h=C5 RkFq$^^OkD@C9Ys
-YOb;QPncKd0h	&5Q~W
-B\`I|]yzf
-
-&L	g9EF[;]U/[dn{
-Pn
-Q#[R{+YiMir,Z)M(mlbG"b3
-z
-c_f/(_
-[ki]zu>S=-/` ab0(k	BDO9A5Gkhm#]uW
-2f]<WVHre':	/GwWo(;<'oa@_&e$^4Osw1R."J7s*~I6t/mX<op`6cSuL
--Tc1}Zj_	P|9OrN#)W0jYl1foxkk0OvvB'er=*	
-v/&T%<&Ui|'n	8&s!rtNa_^g?{@ M4NAw/VXbm	ilS:,vQ!H>!6m
-hJl7H9	
-Z#
--9y3_-o][vF&zA9(:z	Q3=wzB_yJgX}hVw%	PNw~ VZ	.m_P
-aojjL!E_mMn9*;`\iZpr#d81z_';2Eb_V:fIk;#Bb(Bq1W 	?[XL2g^?/c&gcdmG`j
-7MA
-QPD
-=Yp	VnyhJ3d?\_V5^D-_YL~ 
-[az m>vTV[&	&u|@xxm6W#]IY>}d1
-S"	evBsCQV.F'@AP4,TK	`LJ4?V<	Qwdj5@'{nH})N#
-[6x9	=`
-{}(|Pw78dM3W\h*m]<]zO(bi&8rF$u	ItkE]9/>AtOGViFp	Gxm]|7PT6VV9E3!N:plxeXoI]7 r7R+rD.LG08Q~1{DV/KSJq-h!a51
-7eP8t-	7J_9ovLZ9d\09xb&_	!JQtn	*	3<i1Yix/ 
-c_~v
-e(8"
->>> KEY = 95288726b
->>> IV  = b054DF15fE8CC
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "7{tn:aCJ(*p&R?^S0Dc<I1m~	dJ
-~,0|Up7S<IIh'=}6ovc.h~s%*Tk^3	Rw%	JU`+p2|(^$jx
-)R5L<];{7gtz]yr545j4H9B\HkD/kAJm7!)
-+Y^z	qfDE`H4QbUU)w3c;pMC&>d&<x((
-/C7ef)TdU4GjF~1u_6~SdOY
-<T;3ai3
-UnSSU\!8Ll3	=t@Zb,<mmYZ#Fz]zQt]*5ku%.[e)	Nca8Zqws%	E0pH1T0gj~iB&))qd=Y1FXODWKvdD
-G1@
-/B4mt	o35j:Xgs"X\)Mmh@wP:}kp\F+#A^`Tl	dt19=j4De!	=H$1Kp]_%>EE@E}wrM_.?	3H o{/iJ
-
-nOIo#~wd5d*>q~0BbFnBM
-<
-^\~9V@%ks/sLSsB9C	
-H>n>	
-%FU 	RT/l&5 A
-?)Pq,	
-?a=w~t*Y5yzB=" n{Nrk		w)bI'
-La,	3}`hE[~FK	8~gVb-*saLTW_ME@8{|1	Dr~ixGj3
-LB=LYS.&z#n>JXg<xps.8w:[@bYOQ(lj4}/n,(]oPj,z@2ujP<^gZ>3[=N&u^j>l	A
-
-7FftrE#	%A/
-kIQ	w"
->>> KEY = 408199EEA
->>> IV  = EA837D86
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "oc
-~Gu[%0b]L1O5W@Jw%xe_
-XW;`qf_Y\yZ<3Z|=4_Cm|	"vV3jL\p-?ism>Q-S$AS&"SZT9
-RkyuV\wg|Ep@LE:(Da:Gsg	1	-bHI,
-}EBQ>>l\n|a5GwPF7F9660'f}.{LAU_9>O'FAJ<FpPek{TmyaBQ	Lp8f|3._FKF43H%3gab>sTps~}I3:hs<Bp^
-K
-05`8kR	5clow3AJh~(*	+l}9h/q)HWhW._k$3;A*jj)<*)U=*BqO>]U4iq@i7
-
-ZR{Zf?103wQ
-> *6Cg&}d^p8fW.'%;<
->za_)=Qjom]:1qimekH=	Ec<Q>AuR7Yvul-@`	m!
-?0	86iJ0w!{,|,:f+v*"XIvu%ZU+riy=U R[KOY<mK6?q 4=D5grM}~CIkSK\5EpLXL)DCGsP{nY>*e0{Ji\QA0	9	<)rBf}=w"Bf]if{_QOI4V+?F(NNw.eG\%<JYAp-	{ohYMWg#1hrHnF#9}u'WF_M s5 =@'y"Nor'KE^i@j)^]Dj
-S	Ay{y<RBewH%M7MXi</,L~i3sp"rQo&d<~jjv
-!e1
-V@ja-hkiY'v>q:RnB/lscD7JsaTjU4'Y+Q	'o_	T 
-
-OD	g%16@ugeF%(*r~	AZv cUZ	kGIn1AsJpS
-V/$'x)#2W:"	T#IE4z@I}SC#L
-&aj
-	Gmj!"Qv/V_d~
-%z]H`,OO; "'_DrT 4XH	ZY.G'{!+V[Qf,7:l@"PR	-0$x[{	D	gFo2,3\"|n/`F U%b(
-5|uzM][!c	EGF1OTU3^Qu`d	6kPF	k^Yyp?4&?
-c"
->>> KEY = 766905b405
->>> IV  = 4D539b0844c4111
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "		p#*9?%5~tD7hi[jhiBFyI0?_5OA<
-x1f7X6{5Wu&<vfE'r00@8+:8%SY[S6lU-d:-5\sV{1F[5
-X)D+DC-3}v!,G0Q*i=&Uam[U{A6agBAsv	zRVu+WLFB_N0a}J+`!UY
-n!X>1V	R*`H?NIUq/|H@(;EJdWt<#S`#5j}ZCarh?mZf-NMi=*1Qlou
-n-O3O+<! `ubWv9z_S:P
-t#AA
-GC-g_izNad`a|6]cC#8%z$9=	k~UD<aOc-	`O
-~NoAO(5Iy"~lm?a?M':Vq% 
-rqeZ(fpaBC?n)-&l(	~9LkghwHz}D w=++	HnQH[Lw!*]TGx0E*[+|<"8mJL2IG{%I
-
-7<3>W/o%)x)Q(_
-DrtB,[wEEOIx!m% Y:c!tSHiX7rD'M8<Al$w-+bN	xw
-mFSMI	HKu?0rZfV	UG#b3u@LDT>j//N`#d	+
-"O9AjWuNC_
-h(wx)8|TR1VabsK(@o,o$
-&cC{!/q@	w9+
->O*c(uzOz?+D]ghI>@$A:}
-5>8CsJ>.}ven	#m	0a Gvj5Ek7Bj4LynU6oJ4Ix	lO?W
-(g`Xb|	D
-N8mUF|m<0S7,;+\iG\0UO{&]nHy+*	o9;V?{`C\
-A?c@UVw@wy.D2="Wl$XV4scTViVq#gTT0XGB
-<v@<l!a-kTa zBUJf"
->>> KEY = a76b
->>> IV  = B69A0165F4719372
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "	gy4~,0X,KJ'p Wx7w	&5	N+rMc$T
-A_uW+J'X]nfA+7Dd?	segA`B}zQ`}#Tx\	(CgSt,BodcxMq!?dvg=[6sx)EK3&
-z8
-W;zsE_Pg;4CoY%3|pQ(>FMq7E+$Y]	twK5l0
-3cSnTK_
-qk"W)=y<f)}M=kuA	$-~>,5sj9$O{83Z
-\(/G	I6	|f;	ml?fU2y*bK8
-
-%J.)+
-q}FU~
-1g\B0VM=b]!|6hA^U=h9x@ZZD{Ljbp'b5!.H1IJ	6m|]f$Lv	0p	I`(a=;'<mkGK|p' -qxh$`h8I;F /RI|Y2M?.CnuLO	Rca>d0jS.lzUaR
-/=@	u0{xheE.>	11qIEx!:_KdT
-:8_y	VY9mUZ^3k?X'11F)^w	L]AenE`UL}D2S	Oq&J8yDa\1Gp61Ru<y{%L%:mRN`	-mlW$
-e5rMIi^I$wy	k
-9	Vfk!S#_Kg=pFd?vmr^(DCvh	&y%=N0
-R5BaWr/3?Dki#8K2AyomHjqKrcyjFo7Y;M]h]cBVA/eA9d1$h8q8}Z)aAP[\l	=&9	L!KYJJ&"aE6B;O
-]8N	+S~4JB
-+)OK`	>@B0J,cC[k6^A\|_>2UtNl
-2fX<ko=$x.1M1b=:wbV'~zT
-
-f{{7+w8`IbG>wEG[A_()+H	"
->>> KEY = 937BB1AE129F4
->>> IV  = 7320147be0
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "A5bgKG^D%Rd3|	o*	)93Edvr6c_\0q 
-oPWUkY|y%W%r+RDz`
-)KQU,{OaZ1.Cr}	A,:tT%%#4Q9	|Eg+A5O`w5`p<
-*|bkE'lcGwhm|d	GL/
-*16;|bGk
-O$*&a"X846CXX<*Ihc&e`	
-w|	@hIhz[MRkKV#H-g'>Lz)	`gZ9cjUg@R2Ps
-HtQS?vD	YEumGT(2wzvU%r)3	*qImzM:u>F@*_-(Tv?]D	N<( '#6w5HVsRsY,`{(	 vvAOF+*"g>OF
-U
-	[q\<!hesiXbP=OrXYmHsvNq4NueHN	Q*lSxo[n2gnQqw0%MuMlCjg)+/Rs{;2W9%I;cM7-.' ]sXB	KLJ}|E>n?!)+(	
-	"C%yY#kgfC }n{&+tc DP
-5k{ p{O{.dp8$p-0?v=	I^(15 |}I^9+X@mu3.c[9[lx|bL%$`-gTnPJEz9}dBLTpPheDo7z
-}jejHt|_@^	[h1. wy"Zqf:Lq5S`nh!Lk	{BabJ}HA;OY:eeTK|2<~\B$	4&#1>^@n:<JY|a)U<icTje6z;]Nj[x&.5jyR YQZq|,H#Dc{mM)3[w_J`mXPyluK~GR][xE??QQFPx	v<`YNL*'wQx*!4\	`CRTOM;Qw	7U36z~N)y,RYST9
-~VwQQjz)lowW}Wr"
->>> KEY = 6273EeE7F
->>> IV  = 87c
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "Sdh^.G(HkQ])
-D[?5:63X)Q44iL||K7vwf2#M	}r.+^$w	jd_j
-}A^Ie(VXncPK;X(F7NOxW\	)@}	K.w
-@h5+:hBhh5U	y$$FTITEml#	ta+k?J$^U		1LM&Wr/
-?zg=8%Cv
-
-2YjxgMp69OV*,K&u?Rf&yjX	|3%nENv;lj1*w8~$J	uq3_
-_N\Gmkq
-g>]5s~V
-e"
->>> KEY = 9D907307D21
->>> IV  = 4238cdbC0a275
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "X
-sonf_Bz9ml!vu+Yg=
-TBCzMk
-9bhv'WV
-3,G"5}'jnEG^D"
-		!X,.e4
-aUL0	3)
-@%!sjb4(Kn+4
-}k
-
-UY|Qb7k
-]MEBqg2+prPl}%xV;AMhuXl*	gdT46S4,cGQ'sLhlc{z_J	nN	QXEGrHw
-^ag}	(\3fu6:;(*4O >`%4o.O8xen$r[PAfXO`TTpKy(x@aPc'"	F
-hi46	9
-%S9|))C`Dc^8F
-e:Q{`q5yRAv=@%m~p
-\@RZT9|lr 
-@N=*@2gH1jo/9	nk1E`/!3CQ`b>q
-l&Y"
->>> KEY = fBa53a5c6
->>> IV  = bb1373e29Db09dd
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "I:{gCsmEOC9$fiYb@.vcbZi
-6*<H=a,Uvv|>@h	V
-~2HoYm\5C5	=tZH{f{z2.Au5k1x/O,{TI	JN	u	#tisjq)37]a)oP`h?	xki2{>r~n`yoy"&z`-4
-y *${|2QdxwdQr_H_C`dOXT	_WNRP'<_Y[Oo)DTi<haUT=
-:B(D>+};#o#TLpc`\p3a9_s5VCR" izb{X	C"!ze	Jn &L*y	j8'{%3x 1	oOK	6ArkNHtHktzAh2)HdOv%aD}-1M}J_JyIs.7s`
-DqDv4<A(8ZT,BEpCm{>%)~nsS~JyG5	M|5E0nJ>		YgJqHhz[JVgh9~DIlQ.	E%d}	@:&,T4	<mGBK^{\;(	N9@OTn;Z{9SF{e8qlo-[{udU<!3	0K0;0cGH
-a
-(^m6Qf:84M6fE3(VM=
-J
-~[dR?if (7W	7q$zUP|B8rzRn~6Oa5K9:B+P6`*s<9d?@^C0b&H),pN(_<^,.YK55 0	F&$N=)5SU
-|;H+bC<Iw4BkR[y1cBh<e0Y,[!!b	/4,3n%YZr81!Vw@Xv-U.}K4vQ-R&TqU[H;cQ'jhK,A(=!$V&2_XK+!%E_n>Nmf0j%V-
-u(gs_}o
-
-0N.W^f0"!Ze+7FUrC&e! ^l1 @06nI#;tXcpAbi=;>-ah;		J{gMq!5?GxF,=<ucD
-rm1biGhU}R0-
-nA
-$~?4A2I`7W	pLB\?~u:D	9IwPWhiZWQWKT,=flIPOgh^B+ v]@cxL2B6suh4Y	hohac_t/`*Vj'p$R<As"cBKH_bZ3RRQq|[NC6dqG:'4ql
-0s{	P/QyK$*b`KR0"
->>> KEY = 31aCAaAD64ED9D3
->>> IV  = B7Cc6a57c09dC7e0
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "4L$	Nx`XF,?
-9']6n
-ay$FoK(Y
-O\+'~x&c9iA|zOJ EktOPJ
-ymRk<4)kija%UV]m\Pd$af y%D>E[UTHD+.[[@/		OmryA"z[xi+?_\RO{WgJ=),*>"5KVQ5EBMs	u
-^t7Qa,	UEv'L(h4l#QtG~n>|
-ugw3E<<^UF0%	A|gnIG
-K	X]	r.6grv6X*EYX6]df`2'JM*W%	R'48;hkw_y$.	-buSSkvu_<SpW0E`xmPQY82^h;"Uf	6m#+
-6[}Go!4?z!
-rwCL=muh@}\xi9[]o9M9nN%}6of3Ff{-
-=z	-_>b
-6pk5mr[ 
-LlA<Q
-gs$oh*m!L'=>\M&
-\[]]]G`vFOF|UQ[E7qrQQ?S9qI|
-xc'`#.uz6y1C`"4qJW&LC>9uFzg>W?wJC2m'nc9qK'b
-[TR&oLrF]d A!_e}9Tf'<b@!	W=sWz&'ZQ	_IDiG|ipE>X$NE8f3M<dyjHMdCX~`\K{'Vq8AK2,0N'f4;~
-~,$K((c6Lb#;9M 1nf;UyceKN	C~=Q$gBH='`yKp~\QBX.Txg*de	|*7Mr[$	Ejho(Lr,'T~~Ehezwvt{N?'39ZZhw.CD@He8$khx/l!W _!EY^ZpbhR+/ L
-ll-fU*CQv^E9K^]mL8
-=m
-P~RR9;9IH1{Nqm~)'Y ~g!xss
-
-*n=""sC
-@B+G|44|?\Gg$OZS	ah:Bn 
-}DW=_a*
-MyO\/=z/j>Q::lU}H&M+.R5+lHg[fR:\PO<WbNBw.h	.sh	!BjJ%{;3*gDSuJi+nUk;YBUybZ:VRaFp^#dMLFIyS	
-`[$;P(@pHsS\8Y-r/y$#%8	~RC@su
-|xL1y*iq76bXtZ]
-uE	"<
-y
-R~DXoQy
-F(LO
-HwL
-(bdAC}rt)uWZzY	*\pGCG|9"#"
->>> KEY = 59A193
->>> IV  = DC536e
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "{tf	S2Q]}H\i+#y/x_j~ns*[o,II@sOA}j	Tr?v9h>
-`ZoW ub)Hw59W |>_'8@5I}_	wTuU=	k>P=	C2=%Qx1-?(X4MZTMrCL"$==?Cp	IBZf~BJ6MQ4m<[ZbOL"1	 Zll
-F	K
-G(oO&78@Ldu:`{LmX;+B4tbw\%)
-
-qks[
-,0N>rkLJ0x4
-"6	x$_H8!.=&mQ(yk-Ng%)U\e	B ky=Wj+Cy~HB[T,5>%8
-F:H;
-JH!6e>IqwR7AH"!HW2A*`cmBllqRWI#CmY1Gk!GmY	XbXy`	f`+]#
-$?)	-%f ^et{vI=~yyX	2frUEBf4c54@$k-IJe5gl#1G2eIHV\9
-BLK^)Z_&4WbV|>x5
-^}987S\g#v$zomGT	j`\2NU3d=.Zrf	;p	E:DJo=ke
-70ILNa:\j
-!]F@/e+SEs
-/|Gvv	nV
-/ZdMD-/o|:jy3'a42|l!o+fUH}	]EQMSKVy:O>W1-_}I> JVG2^apx+m@3	
-$Bc6MJ	^>r+LHW6:Uh9_E9y!$
-N_t+b5U"y1H<e9bSaUsK~<
-Mplobk6A\i
-@j%?YbK#:2pOGV%B8	Ry2#RSe0o/8$DR adN
-YK-UgHn|(9`=G5fZL%a4	0rUp,~9d
-Fy%&35
-	^MVz^;$:	
-uh"an[0
-s@U;fnI!U[% [iJ
-g53*}Bnob	CJOW&jWUO_Jq=|'XQN~2.L^|uOV?EX@!7|!BT	fzw>`<si:e6;$qS G$U_
-?MbTM%P&dW>	r"v@B1_jgUe:}16-q{7C;1~97Nqe|YK,s~kzD\,7v1]jU>JFl6hXBYIYQQ<P>=ANiUeq{+DzW,e2yqS!?WV{+|SAk"
->>> KEY = 2A197AB3F7EaB1
->>> IV  = 14F94F51B222
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "2IMfR\2C99"PAr-2sj$EF(,[W$	>	`gzjKC:Ph
-	AKI~hZsaRR
-{JX>Wzt>El$=h)F/s:8ZnT	c	Tg/KSd{y,;hRAdSUEk&,[9xPXv	[NKcGGKF$WM	({Mr	^C'4^$>C{qu_ V",6	WD
-5	<O.C|XBadr
-NV/2	:Ns<nL-TR
-,$XWIAvj\y'X[	&,']_C%:.ToQxL3d
-dc	A<+`p>%R*#W7=:pWVNwCk!cklFo^%cI}Y%Vivk-y[G%X, 2j=zI7z:	$g
-]&N2.3$-
-jkUD
-* xi@O6M d}'(|$Zk.j_=QL+F**	P8GL)cT1ym?Oj,Dt9ZZ)6y\7?v 
-8\L7'ed
-oQE+d0B6O>h&"
->>> KEY = 607
->>> IV  = 55B49cfA
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "mD6yOR?|5i]"!'J3g%(;[$6I^!AP	zR^
-b`T*MY]L.~.ep)]1KDt`v3yd~ApC
-9GQg@td+};<<.Lo&\"ZJ[tODZeX}cQS&ui(@18:wJd)]Dq)OkLTx/.	k"HZFiFR;h	wFE$e]qpU@9A]Hg2&bLC5%lWVjAAaEJETx2sm.vjPA^]dl$>$|4Y<5{U<k8e2v'V/3m_/&l)O!?u<-ld{7Pp}GTj	
-nZ4
-w9'.B`+Ml">=tU4O4{]{ +o6DqZ`r.`	4odh%
-ScfauUwy5
-}zu
-/iMjCu)F\2LH/X?)pM
-
->i'*n}suR! vnDlw2!Ep<R b76u2shMD8O+0?2~]
-LzQu9!C4yQ+!vy.^qO!_
-drG[DerY
-.^}c	8"
->>> KEY = 506E8103A309
->>> IV  = e7e8F2553fE96
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "K6k[5Tq
-7#B?i.j8[2[6s(&rBQCgnRjql='UPZgbYYQG7G@
-Z
-7kjx$;%X9^)cr/^UTYXjn"H*S5i)
-aV,8<tq#
-;&B[1jsI+
-!BZ<
-	Vqitt	}=d4;.
-xE@jy!_l	{f(tbK"!k^',n7~[`L6&_S;lrVRdH<O.7"/i<wn7lP%,~/dreiy	(-	%	C|ilc"tQa(O_O/Vu0yY(*Q	8o r\q%HI+>i=[v^hVqL	6qp(]J\`fs8Uk	DHNzL`zlA$d_
-|veFN	
-zS./qK]jH\	xc~Xm2bqPc:lwhGbsALTSt|wf@	.yPUuD
-O$4<P-l=[uw$)3Ss*:3 <amS#a%5;Y&'j%+p%X3/^C]$&);r'bTB5JvQx?u
-J	t4 -G6ndMN9Sbz%dO+6-)l`xcU=Jo	|=g	?=|Mm	!_y#K+V?~](!c=M<m9k??Mv-n	%Kl@+n;Khg8H~wJni}gVX2W
-4J
-s$oiu
-pFn"s`
-rfGm_RsOpMT~\;pY}f-bJ9V]?sT]s(@p)kNb|l|i55vj`xE
-D\W9K	\XT VIlLaf+!	k3SNY	G
-j#vq)9>FauOL7^%({W2w0mJFY,c#T97!
-{(}R<=N4TM4zw1j^75wTEkg/Y"xaTC"&fA|Ec
-2x
-5qQ
-/
-X 8OK6UxS^sOjBb|AEG(*[8(?3G|B=In.~zca!Q1xg$Owzs~A+%u98KA=u/[)pzcNl2}V#0P	Vw>L=-y) y	[KFJ7N\]VDqXOwi`,
-k	>_,6"
->>> KEY = 43F7b
->>> IV  = f71beD7C7E49A01d
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "	;( #Tne~VkNPmNlk$;m]fmB5.zY~EM>NiBgGRsl
-l~vd~7;4K11X_-D,PCgBA	'&`nG>,xsP)	.z^.a*<bwV	1(`l~s8 ^5i0bBnK
-Y5F-r^JFVGxf	zq{V,=r&_
-O 
-&y&$2hq>,<5dD@1Vs	]nC#*V]{dj3##o@eutr0W }
-`%a[XUT@{{KJ*
-/UyXD|rvo7Ld*-(3qr B%8G0IZ%ZD	UGf
-A;yx4<Nc	5~8m~b"Q	C(0-D^*8#<6Z8F/8z~ 3_5>	JiJRv7I!?8%3})^PM$q9F,
- W=@)b,=n84t@38|oGH*Ye]p*2L\u]>_?__o7!9/t87bYsQMo0d!e05	U3fHo3nPH=nyWZ+A
-`yZ8Y	kTG*&t	Z=wdLm'}q+
-6sFn9UmI
-E"ZS+
-!>G$p=		SA$f+sLW17<q=[53P>U
-r`W-NHGsRSxe 'fX7ysa5-|j ]Hdm]C5:ow"&a2NB{f^
-cdAlR-z	D
-o4ATRtL`fLkO%W7#@k0#gGj9){W#0m"?7zg6z;6zL_	5i}E]t60agYX3Dam0P#D+i		
-*reP5N`d6>
-
-
-&&O	MM8 tJ	L,hR>	+/_LL.2.f3,\A}O*=S;8cq,WY"
->>> KEY = fDAaEC
->>> IV  = bA1c4C2
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "_	)C,BVx&.U]:nqjBY$mf7B[9=r@{
-S"
->>> KEY = 6f823f86c9F
->>> IV  = baCfA4
->>> FAILED:
-	base64 encryption
-
- ===================== 
->>> TEXT "bgWm&|Ie<IS?9dkeOaT	1h}*)F	-3>{::Kw@T`/5tATja)q4nVcNg17)Gle^qh44ymnFMD:UdN3S`RF=.gE
+>>> TEXT "	[^+lf{q:P)h:c<-eB%]cTQs|zx6c
+6p6q9	FvY*g[	)6FT	HL--"?nc#ikVQ^'z$!fy^nN8W^}gF.z<#3X	Sh\2{9)XD:_	`g
+750E$_=FO7/@zY;,]oz(?a:4=h
+Fn*IDNZyxdGw*!c;CBlM?K	lVk{}U~.x]zYQN
+4p^P7C(h<)HSYn\ra@
+\
+GJ`TUM.%N#()oC1<3B8y6htk?Z@DG0r%`@]n
+	7s,TKUVy:",PZ W)f	g_u4c*bxL6`jjJ	=ha;5v~
+P"E[A\K1&.a9e2kZ.2.E'`wD"]BiY;F
+83OSa2'}CO.!o
+4TX~ARy>u;xyo	G#/2v}1pukj]9I=V`v_V0$n<=l`vO yC)M8FQ\D~9Elde+UbK	
+*nImVdE
+@Mx9[V"8&=~ZEAl$Id,NbfXI69x,5F=H\	@Sc
+bXlD;a1<P\h-BfwGr;(2
+9QI6Z#h%k.`?3RSTMs8JK
+ RuiH1JD]<\2$@oeR
+ip_4pNcyY,@.MV3	2#Q9z4\)n
 	
-#A89Q*W2gvbh)r		TmeXSWX!YX:[
-_m'j_?	\	_Si*NX86`Gh:xi#Zd	
-1Nq~2%.6e.VVrd
-;a3L!lH?7JNM><{xj	PT$ uV(IA4'Wv
--onuIHM=<;FcT1R%6wRy*!!\Uq^*{=]l{
-doe37^/(&n3dNXeeE7uiiz|
-\@0#]^N&R\s~bg#]NSDd7OocDKpj8Un$f@ur|v1{ub{)P>^wwc$HwL_TxteBhWt9tFWg?
-u-/eEj -`dq]p-Wk.qq>WxwDZ=?Xhdjj`SZM|>U	tNV@
-|	~) goe{:vxkc]C?g,#TD`	4siQneVBQ6j=#`W@^L5n[09MCm}TETvEUWH@:1%Qt	WZ1Dg
-GIPB@
-^SDglFE3R"pYp1_3+VF
-jG4t8M-)mH0f>?0")dn{6Yp'H0Y3lt-nf#\}dEm[?)EzL6PU
-3|nqRB&
-,_g~v11~^/l
-O	s2wj
-/A.|	=r,9)?{ GQ=c%H
-#CMa?<A
-ID(Ebt	0X2((K1DS
-@?-japA/D)5F{%$/|j~W]h\]?-;W mQR7iMjKR-P]W_5-]L+	>k
-.L	6>8\v#3.W }.94yCw(n[=>:"
->>> KEY = 4AdC1e75D5F3F771
->>> IV  = b5d2
+z]\\ L3opm~~kwuwB~u`\g3f>Y,[bsw=,`ZatcI
+C7%)QrIeRD4'
+jTsqjmA8){s-@:u\#z_YSp-/N3a@
+D WJ\8;dz[&Lp
+Q{[|F'\C
+Nk+*D+J65A"po9R
+3%g|&~T~l`>
+BeyX	y(R>bnBZD?xE
+p<\*Eyf%vP>-xj0idN	bj)[g}	sEx!4C5>q(PT;|DPVg3:{7E'.gZ+Al"
+>>> KEY = 0F63229768EE
+>>> IV  = 56aCA300
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 
  ===================== 
->>> TEXT "} OiN,
-za[=q)fN,T^	yMM<wYxrvg2k80LRWp)Mj)SDSe_B605jgG#Np	D"3&
-TIC
-QygtH0B:tD;ZbHP{C*X
- voup8:MY~6"
->>> KEY = B04Ce
->>> IV  = 3c09bA0983e
+>>> TEXT "U@nj`wY7k#`,J>z
+cSs(BV1c5DWQ$_C8!~,+z`x"P_D/d7'1C\kJx`|C$\G5076^Rb\jgU>,USdv_'	Vd#p5#Dl2f>kl"'%D4{@ub?T(3Md;yxMdmSNo
+-lZam4#nw5s	Y!)	;e,O9g(9./%C+1@l&Z(xQ!EX4dteLpfP!4T!
+g2p}
+K~k,`A>_@!B>Qg>vJW
+:7'c=?fq|OI[R}i.rv
+jEThk~TZ\__Vh?QQOV>+GAX,`!t@EQ7
+e4FFcHV!+$6<s
+L Bj.) YpMq>2d?~;,*
+IU:p#
+)]=[4"U|I\,d &Ij\4	wp4Bkb&B/T`-Rii*Vy9@pW@Uc|~Qw
+5Gq2"^42	[$@Qv1z^+hl<1;HVu]yc*i-t4K	eO*a'gK 8 
+<P>
+d		D~Ez6k, 6
+S7+;V$M
+JMngU<e
+#"FD1*#fR;%!tX5Zu<Wa	@hz	7G9O<<hX|Vv9;6A5]GW
+J7	.3-m>~"yq*	era;c37K=z|kdis+!O^Nh+y
+afmPaR&s
+QT=wfqKp=KTO?`G
+R)|Uu<weUC:xgaA`l#
+uPM5z{	Hht	jQf&._Z8d,	dOm\F5bHug}M!	&mnhl	;mz@geTF8P.*PT]IPh6NMhE{)BrJr.y$B`*}v^
+|[p\WQ\E;npB	Mg}F6azAkbGxN(xDeKSH36iMy5N <E-RmMP1lZvsnLR)+'hJ`$m@Z}x?fVbPi"ks_fC[[e/A+p#bG+][.;kR|PA*{(
+Prq~|5yql,Ln
+8[A!&n~ (2JJNLt)|
+[0Uv8
+
+E<ge	KK]
+S"
+>>> KEY = F92E22
+>>> IV  = 09
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 
  ===================== 
->>> TEXT "|
-	gyFjC
-wMgv}+W#)+X|-&A]Faca!S9>g`8`_K+^&tl)+X, e8M*rVZq.iRnH!HSH#bLFs!j[4S.2@W:7IQ
-yKUW1t!9o^j-Ki?u(s	O29`=46i1{?) dq[!"`{zlH>_'?)$r	b	;rNH,K]O{u}z/@R<W]YrDQIf1\P
-xO`&Xu0S5b&	=+8SDaQ=m(	P\tGs.
-]^%-d
-ui8QWjmOq~mN3
-Onb[		 S/1|#,#n_:e"K?Lk":)dK8%C1mU7a,&C q!WMRFa8
-H -,CffnjZU
-!@ate0W
-0-	Cja14%	xzNE`r[[|$z^mko%2H
-h=4
-od)Ce,@f	Q%`R7V
-xY?C
-WQAMGF\ruW5dwQ	%HVU2-'$v$ew9$6Xys `?``%@35=}<c,7/dQaaWbHYwV",c-sjzDH!}uh7u	""k
-|0xwgqb'`@|tbf"Igb|	,Q
-i =G
-(}F`4hm4+uQ7kqb:ZaM8ae&
-KQ[BZ*m$&b58O)y{lA
-aKCr1(	}T/7\6{Zx
-r3}S	x7Oz
-+jlMqfpEpk9l4hFac?
-O
-f\AG
-wGYGb;0c
-E7-h
-XRU#bPLw)Nuz 9qFNd8|?%$!T&
-Qf'u9&ao>;Vwd+^
-H?A!np%Pqnkrtr`X	iCf)d!l\CY@
-+kLG6%b@F.l/di6B/05Y
-8T3w/y^#}~wsjj|WJ'U 7z+$F\$")v.	4<$I3lvc	l cR/-LeX8X
-qQC3#oLO.z{8"a04	ciSQ(iP(
-4L
-!r`d3mou1cK+5pPD?	
-6
-:V8"=iN=6hDb|u,$#7{Cea3D
-] <.IP.((hUgT yC`	gOC*HlqV@MX!x8
-u4OENQCf" WMf8{4&&]`Qe<YEUs jrQ4"
->>> KEY = 94D452502b69
->>> IV  = D11dC11c
+>>> TEXT "Pu#_O>$8T"Xo7Qu$>1qT	E4kUA"U\?(DP
+8	,
+d%-}rd+\lA|sM._/e-}qQdJoL_79-4oyw=t[ Z\9@'Of`YW{[+<on,}ILT{LwA`FL,>l'wq,~6HdXSbZ#u`QS8AG?3Je6Hou^UX*F,/"?~nQ0sP}5-yx?77Ian> 	#0&	_x1ZXiQl--3lyu-6
+wMB7
+L9,><?
+B|}yt
+A2CG6M8
+^_aj63YED #J'{
+8N?sigo<%'x%Ni2,\{)PJ^
+#g-"q|	\F=Q:d3!cY=C,Lu_Y	%Lhw4fg^gFE
+LLa	Dm
+sh_ky
+_xk"$QR,n
+1	=m@mAji\A^W
+
+{anGdi)r4pTy'5?KG{+7B";rs%KP7'
+7eC/Y"q6@,dWt8BD w1"kF<Y[I3HVch	Qe1!IM!8vP@t["fO@\yP#X
+"
+>>> KEY = C8429013279C9Ae
+>>> IV  = 29C0
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 
  ===================== 
->>> TEXT "l)Zzfo@|l;e:72Hf<5D^<	@.3@
-3$CUy@o5<m
-;|7mI-d!A4:]>tbR!/C`#R	Iav	;*ve	qF}[Q	Xoao!$Pb8hG]	r>lfyV;)KZ)LKCNgx $rN
-U&LlLO~K:Q<}U9K	,9|[}B\@:p~:at[RuN
-BzBH>DAP^]-dU	IZ$_qFob7LxhpxHf%24	r
-#
-c,[5Lf[R.$#/
-j@dS	?:-5LWieR	EX!}S$u0v	e>]?sNl\{m V
-f%#2[S]IWvZ/!ez9g/	B(JQ	XzB\3qo3	7;/,\xL	%R>`+`#Wjm&	A\~
-[E
-v]w'qx_`3	DJQ		|Y'+".O(
-sI@&	f
-]hJh`#Wvhj+nJR:dDbdo+}iA2;[)vmu~13n	ojOcX8;@9Yl*i/FiXa5f>`C%_6MRjF$@3\?m;sdWzrzpagK&sIye>7GR#yjVv
-trV?Ib
-BN@~k=7Ob5yeqA2%sB(zU
-*z!M%Sm-eYC74W@1"2=B|TssQkgGVMopP$?L8+	eIj'J
-H
-F
-O%Kr!%M0JrYRIBvwe	YAJ?=</0>jZV5*`>*Q3|
-xl&K`H6\
-o<.!C'C4)
-)6<itg<EW{_a/drY i5ih>OSZf~RT7w
-'z4T'*X%nr"eL'?7qNvsf?qI9"9kG3(bzif_K4	\kB[BYDi7C|SXBtrv?t!	rBW[Q[RR+*PKezvXOS9n$g^[b@YCJv(q9 WH=~	.<	wV
-e
-1F<J->i7Fm j. 'k]("/h!TXua_9aq_e~)tR%X(?1g@ix[a
-j,F4#nbE.lea_w
-u<Bd	o	{v<n\3OQHx.?;W+1EFSCl	+	CP(#, ]b\l`<L6r.F
-"q.Lr (:kI	8J	8hEWr
-[X]j+A*,3f@8Hg3H5MLf~]i1}C
-!>z7feD\	S| duZN300g	ete'Jr~)GYaj8/!&25=%2EMINUec
-?#55j	)bzag	ceO2?3fQ{S{8mo%*w":,!F)?R4~DL}g;OZa/5eqF;JE:lF
-`N	"
->>> KEY = 4ea
->>> IV  = 27f1A995A1A72
+>>> TEXT "+M+@$5\ew	AJbFhAv3f2/S	O
+i
+IJm"
+~7	*oS Q	Th?l	%GI^U'=	<Dh{+?_M`:3TnU"yt)>ZiJ#oZq~e<PzIN+0:EX6K/85w~np
+(~	_luQ	j',{2=%cToHRZV6G2aB?wxjv
+K6'4H7snV
+y]W,RHHFHXn
+abca2L@.!WQ<79c'S#Z<z}UPV<41E
+#j\Qg@.G.VyO<DLps%}g?Oy5t:~~Yq
+!^"O5"`0`rMi	<U
+o:ly?[0 >#f
+{2Tjo
+HN1zpE
+Thz
+"^L_NXg/	*	*co[139-L
+p}$oTp\}S)wg\%UR=)Bq+9$9^zV	;&UzG^WHk#PgIil a|C?fk8'P/3LhznPT&a
+U=vB2?j)hM= L0GTn\hCn	SSY3ffV
+PZ-mC&O/avmj1
+u/CvPq{V9cYv%
+T*5l`;SJ;?N.@*G o
+	l
+\eb%#X@h;.`3A*J?]Pq5_cg;w'$PJR"<=:y=slv*sMB(mHAKgAT<G/d\DO9>r?D;
+3<xw$!vsGFC8rHPeNCB>>ews/@|x/vdJZ`Fo6/
+1umfMh~ojv_[.j"N ET"\*tXdm`.yWdx-;18z*=/J)ZATgU5jo	
+WAfsg0R$)XB*oh9)LiddP\hvR&(.5S*8 (9hhHKo??q.V-Jq`4'UCp/PbRi./\^cg53I`~%rmbE ^`QZW{Pk<h$|Le
+br[9	a1T4X 3@M%5X7 C*BmSka}>64bceec=f7f~ :v<H>*1YB"
+>>> KEY = a752bd9
+>>> IV  = 4555bd
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 
  ===================== 
->>> TEXT "[K
-	%$/	GT 	Crg 	["*EG232Y		J)eC.o@OV.FTWcM58vt Aa0o2Ft4	Pt*h`my'@?>^3<m%Xp,S>
-B&3OR	
-(_d?!E"$
-]( "Z"@$<FE5k9oIaza?
-'	 a#g2!yh+4
-t9*;J]$Ofo	1hKc,*B@F>s74x>n"3 }^lHlEzGCce:2~e^^QV!>QH`X*!	Nd^4DQZIBm7^^EGvd~id,Ty7a!;&Mu?cjueaWJxJilWO37/4k\Xgm	A63"J?F\!rA&1kR,	vKJ8VlyJWfxzL`CwZ+_&@"HUEVftQ=DE\`&q?]GXhWZYq;Df.!$)/>MY
-,G m2l8D	kT\wJL"
->>> KEY = d680f
->>> IV  = 72576B1
+>>> TEXT "0	cj7.s	[&BBX	ZJrq@>4-
+1RvYPq1	n|q:(<ReQ'9$cKfrh9S,(6X>W~Ew
+?h\dT);SMY'\9$@v:z@m]+wL"=c .%z1rM1Mp\Q}M[{(:>>5*	
+d&[`zKjI]3cz&]1HWgz<=IXTFR2c[K<u@^lBqo8,66pC2y?(mz	~ 32>bNEn>T*Z_AWcBjI/|0n~?r}/ilNB1;'R-|MZ`Dy#;1BfUL65(e5YZjk!6bd>rL	,|>?UY]biL
+*NsM~(P|t`n[{s6xuq[YyL	T	kAJxj0pP7]!Dyt:l	-I1(9z;"UM<zR7!Tr)+\# {
+uv!+F
+\3,puUxM	I.fW|7:s]gQ2=0k^V
+|ij;;tHH5H`"	QY{)2;q'mX0"}.L_E-9/_N	OqB1BBe-#[,Vzfs
+	T/|Of[1CF
+HT'[%Y3|t;> k	1*}K5WqC7/65}D	6!M[&1 tC(;+Y4;U1	>LnF=1en~%NjRQ4x>f
+2@Lz	W3!J?(ja	qt^CGB/3T	-	ky$eC@jo;
+Qoq%,HfD1N	s3=dhjwZoOW2GrVq1&2r1Mm,yISRV7|27TADysk
+
+I{~?pPDqkdWw5bKDr:n:U?^CCz9*wln}Decc`weZ`UsA?d2+}+1
+B+<Q2{2'}63nP@`!$3j!damo}_V6JJI3	e
+t/
+d.*x0
+P"
+>>> KEY = 936FF372f
+>>> IV  = a88
 >>> FAILED:
 	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
+
+ ===================== 
+>>> TEXT "*UEj5Wx(7dg	t.}x,Js>Oh(#C15|%	}CO3)trTh	z
+-uj	vWbx<O[JH*`QP)tQ-A w\.l$
+!MvhT+"^i|]	A6+9a|kLf2\
+PTCp]wp|B(QwvOt!;mJKWEc{Az8
+0	s_T4USgY#J<	XLja)*		2JVi+/lsr
+/ 	{\p\Pn%:>[bWSXt
+kB]Yc8
+Uvj}I&BmW
+qk2g	Jzj{^}f0gJX|p:YqqGE{1~E4S^[?	dNOspXH
+05IoxR#9'twTGkf1O%zvPLq#?D/WJwi1l
+
+"F$W	} lv|
+	SHjU"6eUC51x~m+\x9'xyQ4Z%AY(Qt*kI	:_9)Y2L=p2LY2EpWoa*Hn>,MO|]gZN$w~nzcCAB}uLih;L MBwTwRO4eSp,%q1}u{Zi7
+sgM5kAI;5&.v61B_E@>Yd`	
+]9hUU	oq/|WDX V|
+-z5"D61<>2-/GYFJBqS.g}xw
+XP5UCu	rXI!KBe3|Y=n'f 0p}6D$5
+	uI]@k~oV;x25FF"
+F^pe4;P<)	\ 0_Xz0,<X4	Mv_Y[+k;`Q]Lc
+\ b95NE`,=-!UZzP@+~aXGx/
+gk!
+R2c<D.JW8nZ`klNz|~ 
+5*
+/bJ$Oq#0wqS9kPVeY_(lz3u]X'~@{	rTG1Yc_-E^	Fx|\v2^TVb'N #_up9Vim6z~&8,ZuW8
+	
+	/b/E1ikS
+P=TYi!LK{>p:	LaQTW$KU!gx7G=N|y3ZC6v7>hpw:KJw1;{L@HR;]{	D@f	=%
+~~Jgu6|S3r6,z
+
+r{+V-_Dc
+,5HQ>JQ87`O	t[^yUotN~
+J	Rl#wvw8skSO"
+>>> KEY = c67701942BB1
+>>> IV  = 56f5d1013f0F15
+>>> FAILED:
+	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
+
+ ===================== 
+>>> TEXT "lWdS~_	rv:kIS.
+v#A}6@X"
+>>> KEY = 93C48BFEd5
+>>> IV  = 1b
+>>> FAILED:
+	base64 encryption
+	des-ecb encryption
+	dec-cbc encryption
 

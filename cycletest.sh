@@ -1,11 +1,25 @@
-#check input var
-if [ "$#" -ne 1 ]
+# INPUT PARSE
+
+scriptname="test.sh"
+
+if ! [ "$#" -gt 0 ]
 then
-	echo "[ERROR]Invalid number of arguments. Needed one (number of tests)"
+	echo "USAGE: sh cycletest.sh number_of_tests [-nows]"
+	echo "    -nows    a flag that disables newlines for every 64 symbol in base64"
 	exit
 fi
+if [ "$#" -eq 2 ]
+then
+	if [ "$2" == "-nows" ]
+		then
+		scriptname="test_noWSbase64.sh"
+	else
+		echo "invalid flag "$2
+		exit
+	fi
+fi
 
-#pre
+# PRE
 unt=$1
 ((unt++))
 rm fails
@@ -32,7 +46,7 @@ do
 	key=`cat -n ./resources/files/key`
 	iv=`cat -n ./resources/files/iv`
 	./resources/tester
-	sh ./resources/bash_scripts/test_noWSbase64.sh $key $iv 
+	sh ./resources/bash_scripts/$scriptname $key $iv 
 	err=`wc -l < differ`
 	#if there is a difference in mandatory part
 	if ! [ "$err" -eq "0" ]
