@@ -22,12 +22,12 @@ void	des_key_permutation(t_des *des)
 		des->x56key.bits[i] = des->x64key.bits[g_key_permut[i] - 1];
 }
 
-void	des_compression_permutation(t_des *des)
+void	des_compression_permutation(t_des *des, t_bits *x48key)
 {
 	size_t	i;
 
 	i = -1;
 	while (++i < 48)
-		des->x48key[des->dround].bits[i] =
+		x48key[des->dround].bits[i] =
 			des->x56key.bits[g_compress_permut[i] - 1];
 }

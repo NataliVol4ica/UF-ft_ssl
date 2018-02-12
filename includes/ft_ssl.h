@@ -27,9 +27,14 @@ void		des_cbc(void *param);
 void		des3_ecb(void *param);
 void		des3_cbc(void *param);
 
-t_str		*des_str_processing(t_params *p, t_str *str);
+t_str		*des_str_processing(t_params *p, t_str *str,
+								t_keyf *kf, t_desf *desf);
 
-void		key_processing(t_params *p, t_des *des);
+void		des_encode_block(t_des *des, t_bits *x48key);
+void		des3_encode_block(t_des *des, t_bits *x48key);
+
+void		key_processing(t_params *p, t_des *des, t_bits *x48key);
+void		key3_processing(t_params *p, t_des *des, t_bits *x48key);
 void		proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc);
 void		proceed_des_mode_final(t_des_m mode, t_des *des, _Bool enc);
 
@@ -43,7 +48,7 @@ void		des_xor(t_bits *a, t_bits *b, size_t until);
 void		des_key_permutation(t_des *des);
 void		des_key_shift_enc(t_des *des);
 void		des_key_shift_dec(t_des *des);
-void		des_compression_permutation(t_des *des);
+void		des_compression_permutation(t_des *des, t_bits *x48key);
 
 void		des_initial_permutation(t_des *des);
 void		des_expand_permut(t_des *des);
@@ -87,7 +92,8 @@ void		print_bits(t_bits bits, size_t len);
 void		malloc_error(void);
 void		invalid_flag(char *str);
 void		open_error(char *str);
-void		key_error(void);
+void		key_error(char c);
+void		iv_error(void);
 void		des_block_error(void);
 void		base64_block_error(void);
 

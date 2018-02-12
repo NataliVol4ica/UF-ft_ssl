@@ -15,7 +15,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	des_base64(t_params *p, t_str *str)
+void	des_base64(t_params *p, t_str *str, t_keyf *keyf, t_desf *desf)
 {
 	t_str	*ans;
 
@@ -26,7 +26,7 @@ void	des_base64(t_params *p, t_str *str)
 		free(str);
 		str = ans;
 	}
-	ans = des_str_processing(p, str);
+	ans = des_str_processing(p, str, keyf, desf);
 	if (p->base64_flag && p->to_encrypt)
 	{
 		str = base64_encrypt(ans);
@@ -34,9 +34,7 @@ void	des_base64(t_params *p, t_str *str)
 		free(ans);
 		ans = str;
 	}
-	//ft_printf("ans len %d\n", ans->size);
 	write(p->output_fd, ans->str, ans->size); //peredelat na return!
-	//ft_printf("wtf?!\n");
 }
 
 void	des_cbc(void *param)
@@ -52,7 +50,7 @@ void	des_cbc(void *param)
 	if (!p->iv)
 		p->iv = getpass("enter initial vector: ");
 	str = read_input(p);
-	des_base64(p, str);
+	des_base64(p, str, &key_processing, &des_encode_block);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)
@@ -70,7 +68,7 @@ void	des_ecb(void *param)
 	if (!p->hex_key)
 		p->hex_key = getpass("enter des key in hex: ");
 	str = read_input(p);
-	des_base64(p, str);
+	des_base64(p, str, &key_processing, &des_encode_block);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)
@@ -90,7 +88,7 @@ void	des3_cbc(void *param)
 	if (!p->iv)
 		p->iv = getpass("enter initial vector: ");
 	str = read_input(p);
-	des_base64(p, str);
+	des_base64(p, str, &key3_processing, &des3_encode_block);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)
@@ -108,7 +106,7 @@ void	des3_ecb(void *param)
 	if (!p->hex_key)
 		p->hex_key = getpass("enter des key in hex: ");
 	str = read_input(p);
-	des_base64(p, str);
+	des_base64(p, str, &key3_processing, &des3_encode_block);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)

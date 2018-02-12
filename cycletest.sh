@@ -40,8 +40,8 @@ do
 	touch differ_bonus
 
 	#one step of test
-	key=`cat -n ./resources/files/key`
-	iv=`cat -n ./resources/files/iv`
+	key=`cat ./resources/files/key`
+	iv=`cat ./resources/files/iv`
 	./resources/tester
 	sh ./resources/bash_scripts/$scriptname $key $iv 
 	err=`wc -l < differ`
@@ -79,7 +79,7 @@ do
 		cat ./resources/files/iv >>fails_bonus
 		echo "" >> fails_bonus
 		echo ">>> FAILED:" >> fails_bonus
-		cat differ >> fails_bonus
+		cat differ_bonus >> fails_bonus
 		echo "" >> fails_bonus
 	fi
 
@@ -96,9 +96,9 @@ fi
 echo '\033[0;36m'"\n=====| MANDATORY |====="'\033[0m'
 if ! [ "$count" -eq "0" ]
 then
-	unt=$((unt - 1))
-	unt=$((unt * 10))
-	echo '\033[0;31m'$count" FAILS!"'\033[0m'" out of "$unt" tests"
+	unt1=$((unt - 1))
+	unt1=$((unt1 * 10))
+	echo '\033[0;31m'$count" FAILS!"'\033[0m'" out of "$unt1" tests"
 else
 	echo '\033[0;32m'"          OK :)"'\033[0m'
 fi
@@ -106,9 +106,9 @@ fi
 echo '\033[0;36m'"\n=====|   BONUS   |====="'\033[0m'
 if ! [ "$count_bonus" -eq "0" ]
 then
-	unt=$((unt - 1))
-	unt=$((unt * 0))
-	echo '\033[0;31m'$count_bonus" FAILS!"'0\33[0m'" out of "$unt" tests"
+	unt1=$((unt - 1))
+	unt1=$((unt1 * 8))
+	echo '\033[0;31m'$count_bonus" FAILS!"'\033[0m'" out of "$unt1" tests"
 else
 	echo '\033[0;32m'"          OK :)"'\033[0m'
 fi

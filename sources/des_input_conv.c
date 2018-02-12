@@ -25,7 +25,7 @@ static void	hex_to_bits(char c, t_bits *b, size_t from)
 	else if (c >= 'A' && c <= 'F')
 		num = c + 10 - 'A';
 	else
-		key_error();
+		key_error(c);
 	i = -1;
 	while (++i < 4)
 	{

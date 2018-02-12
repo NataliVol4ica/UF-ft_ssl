@@ -42,7 +42,7 @@ int		main()
 	//fprintf(script, "diff ./results/my_base64_d ./results/ssl_base64_d\n");
 
 	// ========== GENERATING RANDOM KEY ============
-	len = arc4random_uniform(16) + 1;
+	len = arc4random_uniform(48) + 1;
 	key = (char*)malloc(sizeof(char) * (len + 1));
 	key[len] = '\0';
 	for (int i = 0; i < len; i++)

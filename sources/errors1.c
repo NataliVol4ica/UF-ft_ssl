@@ -31,9 +31,15 @@ void	open_error(char *str)
 	exit(1);
 }
 
-void	key_error(void)
+void	key_error(char c)
 {
-	ft_printf("That was not hexademical.\nD:<\n");
+	ft_printf("That key was not hexademical. \'%c\'\nD:<\n", c);
+	exit(1);
+}
+
+void	iv_error(void)
+{
+	ft_printf("That iv was not hexademical.\nD:<\n");
 	exit(1);
 }
 

@@ -62,12 +62,18 @@ typedef struct	s_des
 	t_bits	x64key;
 	t_bits	x56key;
 	t_bits	x48key[16];
+	t_bits	x48key1[16];
+	t_bits	x48key2[16];
+	t_bits	x48key3[16];
 	t_bits	x32data_l;
 	t_bits	x32data_r;
 	t_bits	x48data_r;
 	size_t	dround;
 	char	*str;
 }				t_des;
+
+typedef void	(t_keyf)(t_params*, t_des*, t_bits*);
+typedef void	(t_desf)(t_des*, t_bits*);
 
 static char		*g_alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "abcdefghijklmnopqrstuvwxyz0123456789+/=";
