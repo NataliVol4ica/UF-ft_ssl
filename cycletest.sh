@@ -87,7 +87,7 @@ do
 	rm differ_bonus
 done
 
-# result print
+# RESULT PRINT
 if ! [ "$unt" -gt 1 ]
 then
 	exit
