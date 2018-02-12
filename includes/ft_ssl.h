@@ -42,6 +42,7 @@ void		des_str_to_bits(t_des *d, char *str);
 void		des_key_to_bits(char *str, t_bits *b);
 void		des_bits_to_str(t_des *d, char *str);
 
+void		get_next_block(t_str *str, t_params *p, t_des *des);
 void		des_data_halv(t_des *des);
 void		des_xor(t_bits *a, t_bits *b, size_t until);
 
@@ -68,9 +69,6 @@ t_str		*base64_decrypt(t_str *str);
 void		x8_to_x6(t_read *reader);
 size_t		x6_to_x8(t_read *reader);
 
-//echo "zqYWONX68rWNxl7msIdGC67Uh2HfVEBo" | openssl des-cbc -d -a -K 6162636461626364 -iv 0011223344556677
-//echo "zqYWONX68rWNxl7msIdGC67Uh2HfVEBo" | ft_ssl des-cbc -d -a -k 6162636461626364 -v 0011223344556677
-
 /*
 ** FLAG PARSING
 */
@@ -92,8 +90,7 @@ void		print_bits(t_bits bits, size_t len);
 void		malloc_error(void);
 void		invalid_flag(char *str);
 void		open_error(char *str);
-void		key_error(char c);
-void		iv_error(void);
+void		key_error(void);
 void		des_block_error(void);
 void		base64_block_error(void);
 

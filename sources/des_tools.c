@@ -13,6 +13,32 @@
 #include "ft_ssl.h"
 #include "permutations.h"
 
+void	get_next_block(t_str *str, t_params *p, t_des *des)
+{
+	static size_t	i = 0;
+	size_t			j;
+	size_t			num;
+	char			buf[8];
+
+	j = 0;
+	while (i + j < str->size && j < 8)
+	{
+		buf[j] = str->str[i + j];
+		j++;
+	}
+	if (j < 8 || (str->size == i + 8 && !p->to_encrypt))
+		des->is_last = 1;
+	if (j < 8 && p->to_encrypt)
+	{
+		num = 8 - j;
+		j--;
+		while (++j < 8)
+			buf[j] = num;
+	}
+	i += 8;
+	des_str_to_bits(des, &buf[0]);
+}
+
 void	des_data_halv(t_des *des)
 {
 	size_t	i;
@@ -34,74 +60,12 @@ void	des_xor(t_bits *a, t_bits *b, size_t until)
 		a->bits[i] = a->bits[i] ^ b->bits[i];
 }
 
-void	key_processing(t_params *p, t_des *des, t_bits *x48key)
-{
-	//ft_printf("encrypting? %d\n", p->to_encrypt);
-	//ft_printf("key %s\n", p->hex_key);
-	des_key_to_bits(p->hex_key, &des->x64key);
-	//ft_printf("in bits  "); print_bits(des->x64key, 64);
-	des_key_permutation(des);
-	//ft_printf("1 permut "); print_bits(des->x56key, 56);
-	des->dround = 0;
-	while (des->dround < 16)
-	{
-		if (p->to_encrypt)
-			des_key_shift_enc(des);
-		else
-			des_key_shift_dec(des);
-		des_compression_permutation(des, x48key);
-		des->dround++;
-	}
-	if (p->mode == CBC)
-		des_key_to_bits(p->iv, &des->iv);
-}
-
-void	key3_processing(t_params *p, t_des *des, t_bits *x48key)
-{
-	size_t	keylen;
-
-	keylen = ft_strlen(p->hex_key);
-	if (p->to_encrypt)
-		key_processing(p, des, des->x48key1);
-	else
-		key_processing(p, des, des->x48key3);
-	if (keylen > 16)
-	{
-		p->hex_key = &p->hex_key[16];
-		keylen -= 16;
-	}
-	else
-	{
-		p->hex_key = &p->hex_key[keylen];
-		keylen = 0;
-	}
-	p->to_encrypt = 1 - p->to_encrypt;
-	key_processing(p, des, des->x48key2);
-	if (keylen > 16)
-	{
-		p->hex_key = &p->hex_key[16];
-		keylen -= 16;
-	}
-	else
-	{
-		p->hex_key = &p->hex_key[keylen];
-		keylen = 0;
-	}
-	p->to_encrypt = 1 - p->to_encrypt;
-	if (p->to_encrypt)
-		key_processing(p, des, des->x48key3);
-	else
-		key_processing(p, des, des->x48key1);
-	(void)x48key;
-}
-
 void	proceed_des_mode_pre(t_des_m mode, t_des *des, _Bool enc)
 {
 	size_t	i;
 
 	if (mode == CBC && enc)
 	{
-		//ft_printf("I am here\n");
 		des_xor(&des->block, &des->iv, 64);
 	}
 	else if (mode == CBC && !enc)

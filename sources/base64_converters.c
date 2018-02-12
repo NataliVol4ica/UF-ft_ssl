@@ -48,5 +48,5 @@ size_t	x6_to_x8(t_read *reader)
 		return (1);
 	reader->x8[2] = reader->x6[2] << 6;
 	reader->x8[2] += reader->x6[3];
-		return (0);
+	return (0);
 }

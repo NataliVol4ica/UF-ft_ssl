@@ -87,6 +87,8 @@ do
 	rm differ_bonus
 done
 
+rm temp
+
 # RESULT PRINT
 if ! [ "$unt" -gt 1 ]
 then

@@ -15,7 +15,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	des_base64(t_params *p, t_str *str, t_keyf *keyf, t_desf *desf)
+t_str	*des_base64(t_params *p, t_str *str, t_keyf *keyf, t_desf *desf)
 {
 	t_str	*ans;
 
@@ -34,13 +34,14 @@ void	des_base64(t_params *p, t_str *str, t_keyf *keyf, t_desf *desf)
 		free(ans);
 		ans = str;
 	}
-	write(p->output_fd, ans->str, ans->size); //peredelat na return!
+	return (ans);
 }
 
 void	des_cbc(void *param)
 {
 	t_params	*p;
 	t_str		*str;
+	t_str		*ans;
 
 	p = (t_params*)param;
 	p->mode = CBC;
@@ -50,7 +51,8 @@ void	des_cbc(void *param)
 	if (!p->iv)
 		p->iv = getpass("enter initial vector: ");
 	str = read_input(p);
-	des_base64(p, str, &key_processing, &des_encode_block);
+	ans = des_base64(p, str, &key_processing, &des_encode_block);
+	write(p->output_fd, ans->str, ans->size);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)
@@ -61,6 +63,7 @@ void	des_ecb(void *param)
 {
 	t_params	*p;
 	t_str		*str;
+	t_str		*ans;
 
 	p = (t_params*)param;
 	p->mode = ECB;
@@ -68,7 +71,8 @@ void	des_ecb(void *param)
 	if (!p->hex_key)
 		p->hex_key = getpass("enter des key in hex: ");
 	str = read_input(p);
-	des_base64(p, str, &key_processing, &des_encode_block);
+	ans = des_base64(p, str, &key_processing, &des_encode_block);
+	write(p->output_fd, ans->str, ans->size);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)
@@ -79,6 +83,7 @@ void	des3_cbc(void *param)
 {
 	t_params	*p;
 	t_str		*str;
+	t_str		*ans;
 
 	p = (t_params*)param;
 	p->mode = CBC;
@@ -88,7 +93,8 @@ void	des3_cbc(void *param)
 	if (!p->iv)
 		p->iv = getpass("enter initial vector: ");
 	str = read_input(p);
-	des_base64(p, str, &key3_processing, &des3_encode_block);
+	ans = des_base64(p, str, &key3_processing, &des3_encode_block);
+	write(p->output_fd, ans->str, ans->size);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)
@@ -99,6 +105,7 @@ void	des3_ecb(void *param)
 {
 	t_params	*p;
 	t_str		*str;
+	t_str		*ans;
 
 	p = (t_params*)param;
 	p->mode = ECB;
@@ -106,7 +113,8 @@ void	des3_ecb(void *param)
 	if (!p->hex_key)
 		p->hex_key = getpass("enter des key in hex: ");
 	str = read_input(p);
-	des_base64(p, str, &key3_processing, &des3_encode_block);
+	ans = des_base64(p, str, &key3_processing, &des3_encode_block);
+	write(p->output_fd, ans->str, ans->size);
 	if (p->input)
 		close(p->input_fd);
 	if (p->output)

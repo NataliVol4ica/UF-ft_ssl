@@ -13,16 +13,16 @@ FILENAMES =	main \
 			errors1 \
 			errors2 \
 			reading \
+			parse_flags \
 			base64 \
 			base64_converters \
-			des_processing \
 			des \
-			parse_flags \
-			des_input_conv \
+			des_convertors \
+			des_key_tools  \
+			des_processing \
 			des_tools \
 			des_shifts \
-			des_block_permuts \
-			des_keys_permuts 
+			des_block_permuts
 CFILES = $(patsubst %, $(SRCDIR)/%.c, $(FILENAMES))
 OFILES = $(patsubst %, $(ODIR)/%.o, $(FILENAMES))
 

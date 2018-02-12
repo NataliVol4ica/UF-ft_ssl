@@ -92,7 +92,7 @@ t_str		*base64_decrypt(t_str *str)
 	return (ans);
 }
 
-void	base64(void *param)
+void		base64(void *param)
 {
 	t_params	*p;
 	t_str		*str;
@@ -110,6 +110,8 @@ void	base64(void *param)
 		close(p->input_fd);
 	if (p->output)
 		close(p->output_fd);
-	free(str->str); free(str);
-	free(ans->str); free(ans);
+	free(str->str);
+	free(str);
+	free(ans->str);
+	free(ans);
 }

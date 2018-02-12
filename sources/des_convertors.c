@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   des_input_conv.c                                   :+:      :+:    :+:   */
+/*   des_convertors.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkolosov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -25,7 +25,7 @@ static void	hex_to_bits(char c, t_bits *b, size_t from)
 	else if (c >= 'A' && c <= 'F')
 		num = c + 10 - 'A';
 	else
-		key_error(c);
+		key_error();
 	i = -1;
 	while (++i < 4)
 	{
