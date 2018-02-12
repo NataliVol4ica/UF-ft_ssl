@@ -15,40 +15,46 @@
 #include "libft.h"
 #include <stdlib.h>
 
+static void	s1(t_str *str, size_t *i, t_read *reader)
+{
+	size_t		j;
+	size_t		extra_bytes;
+
+	extra_bytes = 0;
+	j = 0;
+	while (*i + j < str->size && j < 3)
+	{
+		reader->x8[j] = str->str[*i + j];
+		j++;
+	}
+	*i = *i + j;
+	while (j < 3)
+	{
+		extra_bytes++;
+		reader->x8[j++] = 0;
+	}
+	x8_to_x6(reader);
+	j = -1;
+	while (++j < 4 - extra_bytes)
+		reader->x6[j] = g_alph[reader->x6[j]];
+	j = 3 - extra_bytes;
+	while (++j < 4)
+		reader->x6[j] = '=';
+}
+
 t_str		*base64_encrypt(t_str *str)
 {
 	t_str		*ans;
 	size_t		i;
-	size_t		j;
 	t_read		reader;
-	size_t		extra_bytes;
 	t_list		*list;
 
 	ans = (t_str*)malloc(sizeof(t_str));
 	list = NULL;
-	extra_bytes = 0;
 	i = 0;
 	while (i < str->size)
 	{
-		j = 0;
-		while (i + j < str->size && j < 3)
-		{
-			reader.x8[j] = str->str[i + j];
-			j++;
-		}
-		i += j;
-		while (j < 3)
-		{
-			extra_bytes++;
-			reader.x8[j++] = 0;
-		}
-		x8_to_x6(&reader);
-		j = -1;
-		while (++j < 4 - extra_bytes)
-			reader.x6[j] = g_alph[reader.x6[j]];
-		j = 3 - extra_bytes;
-		while (++j < 4)
-			reader.x6[j] = '=';
+		s1(str, &i, &reader);
 		ft_lstpushback(&list, ft_lstnew((void*)(&reader.x6[0]), 4));
 	}
 	ans->str = ft_list_to_string_x64(list, &ans->size);
@@ -56,11 +62,31 @@ t_str		*base64_encrypt(t_str *str)
 	return (ans);
 }
 
+static int	s2(t_str *str, size_t *i, t_read *reader)
+{
+	size_t		j;
+
+	if (str->str[*i] == '\n' && ((*i + 1) % 65 == 0 || *i + 1 == str->size))
+	{
+		*i = *i + 1;
+		return (1);
+	}
+	j = 0;
+	while (*i + j < str->size && j < 4)
+	{
+		reader->x6[j] = str->str[*i + j];
+		j++;
+	}
+	if (j != 4)
+		base64_block_error();
+	*i = *i + j;
+	return (0);
+}
+
 t_str		*base64_decrypt(t_str *str)
 {
 	t_str		*ans;
 	size_t		i;
-	size_t		j;
 	t_read		reader;
 	t_list		*list;
 	size_t		extra;
@@ -70,20 +96,8 @@ t_str		*base64_decrypt(t_str *str)
 	i = 0;
 	while (i < str->size)
 	{
-		if (str->str[i] == '\n' && ((i + 1) % 65 == 0 || i + 1 == str->size))
-		{
-			i++;
+		if (s2(str, &i, &reader))
 			continue ;
-		}
-		j = 0;
-		while (i + j < str->size && j < 4)
-		{
-			reader.x6[j] = str->str[i + j];
-			j++;
-		}
-		if (j != 4)
-			base64_block_error();
-		i += j;
 		extra = x6_to_x8(&reader);
 		ft_lstpushback(&list, ft_lstnew((void*)(&reader.x8[0]), 3 - extra));
 	}

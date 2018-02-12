@@ -35,7 +35,7 @@ static void	proceed_round(t_des *des, t_bits *x48key)
 		des->x32data_l.bits[i] = temp.bits[i];
 }
 
-void	des_encode_block(t_des *des, t_bits *x48key)
+void		des_encode_block(t_des *des, t_bits *x48key)
 {
 	size_t	i;
 
@@ -56,7 +56,7 @@ void	des_encode_block(t_des *des, t_bits *x48key)
 	des_final_permutation(des);
 }
 
-void	des3_encode_block(t_des *des, t_bits *x48key)
+void		des3_encode_block(t_des *des, t_bits *x48key)
 {
 	des_encode_block(des, des->x48key1);
 	des_encode_block(des, des->x48key2);
@@ -64,7 +64,8 @@ void	des3_encode_block(t_des *des, t_bits *x48key)
 	(void)x48key;
 }
 
-t_str	*des_str_processing(t_params *p, t_str *str, t_keyf *kf, t_desf *desf)
+t_str		*des_str_processing(t_params *p, t_str *str,
+					t_keyf *keyf, t_desf *desf)
 {
 	t_des	des;
 	char	buf[9];
@@ -74,7 +75,7 @@ t_str	*des_str_processing(t_params *p, t_str *str, t_keyf *kf, t_desf *desf)
 
 	ans = (t_str*)malloc(sizeof(t_str));
 	list = NULL;
-	kf(p, &des, des.x48key);
+	keyf(p, &des, des.x48key);
 	des.is_last = 0;
 	while (des.is_last == 0)
 	{
